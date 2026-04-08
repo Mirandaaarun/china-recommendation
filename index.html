@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>China Trip Final Recommendation</title>
+  <style>
+    :root {
+      --bg: #f4efe7;
+      --paper: rgba(255, 252, 247, 0.88);
+      --ink: #1d1b19;
+      --muted: #685f56;
+      --line: rgba(29, 27, 25, 0.12);
+      --accent: #b24a2b;
+      --accent-soft: rgba(178, 74, 43, 0.12);
+      --accent-2: #0f5f59;
+      --shadow: 0 24px 70px rgba(63, 41, 18, 0.12);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(178, 74, 43, 0.16), transparent 30%),
+        radial-gradient(circle at top right, rgba(15, 95, 89, 0.12), transparent 28%),
+        linear-gradient(180deg, #f7f2eb 0%, #efe7dc 100%);
+      line-height: 1.6;
+    }
+
+    .page {
+      width: min(1120px, calc(100% - 32px));
+      margin: 32px auto 56px;
+    }
+
+    .hero {
+      padding: 40px;
+      border-radius: calc(var(--radius) + 8px);
+      background:
+        linear-gradient(135deg, rgba(255, 250, 243, 0.95), rgba(247, 239, 228, 0.85)),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cg fill='none' stroke='rgba(178,74,43,0.08)' stroke-width='1'%3E%3Cpath d='M0 90h180M90 0v180'/%3E%3Ccircle cx='90' cy='90' r='48'/%3E%3Ccircle cx='90' cy='90' r='78'/%3E%3C/g%3E%3C/svg%3E");
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -40px -50px auto;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(178, 74, 43, 0.18), transparent 70%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.78rem;
+      color: var(--accent);
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.1;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 5vw, 4.5rem);
+      max-width: 9ch;
+      letter-spacing: -0.04em;
+    }
+
+    .hero p {
+      max-width: 62ch;
+      font-size: 1.08rem;
+      margin: 18px 0 0;
+      color: var(--muted);
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+      font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .meta span {
+      padding: 10px 14px;
+      background: rgba(255, 255, 255, 0.6);
+      border: 1px solid rgba(29, 27, 25, 0.08);
+      border-radius: 999px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .card {
+      background: var(--paper);
+      backdrop-filter: blur(10px);
+      border-radius: var(--radius);
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+
+    .route {
+      font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: clamp(1.1rem, 2.2vw, 1.45rem);
+      font-weight: 700;
+      color: var(--accent-2);
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .pill {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    section {
+      margin-top: 24px;
+    }
+
+    section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 18px;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .city-block + .city-block,
+    .stack > * + * {
+      margin-top: 16px;
+    }
+
+    .city-block h3 {
+      font-size: 1.12rem;
+      margin-bottom: 8px;
+    }
+
+    .city-block p {
+      color: var(--muted);
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+      background: rgba(255, 255, 255, 0.42);
+    }
+
+    th, td {
+      text-align: left;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    th {
+      font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    ol, ul {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+
+    li + li {
+      margin-top: 10px;
+    }
+
+    .cols {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .mini {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .city-ref {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .city-card {
+      padding: 22px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.5);
+      border: 1px solid var(--line);
+    }
+
+    .city-card ul {
+      margin-top: 12px;
+    }
+
+    .checklist {
+      columns: 2;
+      column-gap: 24px;
+    }
+
+    .checklist li {
+      break-inside: avoid;
+    }
+
+    footer {
+      margin-top: 28px;
+      padding: 18px 4px 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .grid,
+      .cols,
+      .city-ref {
+        grid-template-columns: 1fr;
+      }
+
+      .checklist {
+        columns: 1;
+      }
+
+      .hero,
+      .card {
+        padding: 24px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        width: min(100% - 20px, 1120px);
+        margin-top: 10px;
+      }
+
+      h1 {
+        max-width: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <p class="eyebrow">Travel Brief</p>
+      <h1>China Trip Final Recommendation</h1>
+      <p>Four cities. Zero wasted days. Built for a fast-paced China trip focused on nightlife, culture, food, and visual spectacle without wasting time on soft detours.</p>
+      <div class="meta">
+        <span>Dates: May 14 to May 24, 2026</span>
+        <span>Logged: April 7, 2026</span>
+      </div>
+    </header>
+
+    <div class="grid">
+      <section class="card stack">
+        <div>
+          <h2>The Route</h2>
+          <p class="route">Shanghai → Chongqing → Xi'an → Beijing</p>
+          <div class="pill-list">
+            <span class="pill">Nightlife</span>
+            <span class="pill">Culture</span>
+            <span class="pill">Food</span>
+            <span class="pill">Visual Spectacle</span>
+            <span class="pill">No Dead Time</span>
+          </div>
+        </div>
+        <div class="mini">This route opens with the easiest landing, peaks with the most visually intense city, anchors the middle with ancient history, and closes with the Great Wall.</div>
+      </section>
+
+      <section class="card stack">
+        <h2>Skipped</h2>
+        <ul>
+          <li><strong>Chengdu:</strong> Comfortable, but Chongqing hits harder for this itinerary.</li>
+          <li><strong>Shenzhen:</strong> Humid in May and not worth the detour.</li>
+          <li><strong>Hangzhou:</strong> Beautiful, but too quiet for a 20s group.</li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="card">
+      <h2>Why These Four</h2>
+      <div class="cols">
+        <div class="city-block">
+          <h3>Shanghai</h3>
+          <p>Best U.S. flight connections, easiest English environment, and the strongest soft landing into China. It gives the trip immediate polish without culture shock.</p>
+        </div>
+        <div class="city-block">
+          <h3>Chongqing</h3>
+          <p>The key call. Chengdu is comfortable; Chongqing is unforgettable. The skyline is pure cyberpunk, the river cruise is one of the sharpest visuals in Asia, and the nightlife has real depth.</p>
+        </div>
+        <div class="city-block">
+          <h3>Xi'an</h3>
+          <p>Non-negotiable. The Terracotta Army is singular, and the city delivers one of the best old-China to night-market contrasts anywhere in the country.</p>
+        </div>
+        <div class="city-block">
+          <h3>Beijing</h3>
+          <p>The strongest ending. The Great Wall lands harder as the last major set piece, and the city still closes with serious food and underground nightlife.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Day-by-Day Itinerary</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>City</th>
+              <th>Plan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>May 14</strong></td>
+              <td>Arrive Shanghai</td>
+              <td>Settle in. Shouning Road Night Market for dinner. Yongkang Lu for drinks.</td>
+            </tr>
+            <tr>
+              <td><strong>May 15</strong></td>
+              <td>Shanghai</td>
+              <td>Anfu Road in the morning, The Bund at dusk, then Found 158 for Arkham or TAXX.</td>
+            </tr>
+            <tr>
+              <td><strong>May 16</strong></td>
+              <td>Shanghai</td>
+              <td>Wanda Diamond League at Shanghai Stadium, then West Bund Museum and the Pompidou exhibition.</td>
+            </tr>
+            <tr>
+              <td><strong>May 17</strong></td>
+              <td>Fly to Chongqing</td>
+              <td>Arrive in the afternoon. See Hongya Cave from the opposite bank at night, then go to an air raid shelter bar.</td>
+            </tr>
+            <tr>
+              <td><strong>May 18</strong></td>
+              <td>Chongqing</td>
+              <td>Liziba Station early, Chaotianmen and the Crown Escalator, night river cruise, 9th Street clubs, then midnight hotpot.</td>
+            </tr>
+            <tr>
+              <td><strong>May 19</strong></td>
+              <td>Chongqing → Xi'an</td>
+              <td>8 a.m. high-speed rail, arrival around 1:30 p.m., then Sajinqiao Night Market and bowl-smashing liquor at Yongxingfang.</td>
+            </tr>
+            <tr>
+              <td><strong>May 20</strong></td>
+              <td>Xi'an</td>
+              <td>Terracotta Army at 8:30 a.m., Shaanxi History Museum, then the Muslim Quarter at night.</td>
+            </tr>
+            <tr>
+              <td><strong>May 21</strong></td>
+              <td>Xi'an → Beijing</td>
+              <td>Morning bike ride on the city wall, flight to Beijing, then Ghost Street at night.</td>
+            </tr>
+            <tr>
+              <td><strong>May 22</strong></td>
+              <td>Beijing</td>
+              <td>Forbidden City early, Jingshan Park for the palace view, then Sanlitun in the evening.</td>
+            </tr>
+            <tr>
+              <td><strong>May 23</strong></td>
+              <td>Beijing</td>
+              <td>Mutianyu Great Wall with a 7 a.m. start, then Dada Beijing at night.</td>
+            </tr>
+            <tr>
+              <td><strong>May 24</strong></td>
+              <td>Depart Beijing</td>
+              <td>Head to PEK airport.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="grid">
+      <section class="card">
+        <h2>Three Best Nights</h2>
+        <ol>
+          <li><strong>Shanghai, May 15:</strong> French Concession dinner, then Arkham. Strongest club night of the trip.</li>
+          <li><strong>Chongqing, May 18:</strong> River cruise, 9th Street until 3 a.m., then midnight hotpot. Hard to beat.</li>
+          <li><strong>Beijing, May 23:</strong> Great Wall by day, Dada Beijing by night. Perfect contrast.</li>
+        </ol>
+      </section>
+
+      <section class="card">
+        <h2>Three Best Days Overall</h2>
+        <ol>
+          <li><strong>May 17, Chongqing arrival night:</strong> The first full view of Hongya Cave from across the Jialing River is the kind of moment that resets your expectations.</li>
+          <li><strong>May 23, Great Wall:</strong> Mutianyu in May, fully green. This is one of the main reasons people come to China.</li>
+          <li><strong>May 20, Xi'an:</strong> Terracotta Army in the morning and the Muslim Quarter at night. Best one-day range of the whole trip.</li>
+        </ol>
+      </section>
+    </div>
+
+    <section class="card">
+      <h2>Book These Now</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Why It Matters</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Forbidden City timed entry</strong></td>
+              <td>Sells out weeks in advance in May. Book early.</td>
+            </tr>
+            <tr>
+              <td><strong>Wanda Diamond League, May 16</strong></td>
+              <td>Ticketed event with limited seats.</td>
+            </tr>
+            <tr>
+              <td><strong>Chongqing → Xi'an high-speed rail</strong></td>
+              <td>Popular route that can fill up quickly.</td>
+            </tr>
+            <tr>
+              <td><strong>Mutianyu Great Wall transport</strong></td>
+              <td>Pre-book a driver or transport to avoid friction.</td>
+            </tr>
+            <tr>
+              <td><strong>West Bund Museum / Pompidou</strong></td>
+              <td>Timed entry is recommended.</td>
+            </tr>
+            <tr>
+              <td><strong>ExpressVPN + NordVPN</strong></td>
+              <td>Install before departure. You usually cannot rely on downloading them inside China.</td>
+            </tr>
+            <tr>
+              <td><strong>Alipay</strong></td>
+              <td>Link a U.S. Visa or Mastercard before the trip.</td>
+            </tr>
+            <tr>
+              <td><strong>Nomad APAC eSIM</strong></td>
+              <td>Buy and install before departure.</td>
+            </tr>
+            <tr>
+              <td><strong>DiDi</strong></td>
+              <td>Register and verify the phone number before landing.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>City Quick Reference</h2>
+      <div class="city-ref">
+        <article class="city-card">
+          <h3>Shanghai</h3>
+          <ul>
+            <li><strong>Stay:</strong> French Concession or Jing'an.</li>
+            <li><strong>Don't miss:</strong> Anfu Road, The Bund at dusk, Found 158, Speak Low, West Bund Museum.</li>
+            <li><strong>Eat:</strong> Yang's Fried Dumplings, Shouning Road Night Market, dinner in the French Concession.</li>
+          </ul>
+        </article>
+        <article class="city-card">
+          <h3>Chongqing</h3>
+          <ul>
+            <li><strong>Stay:</strong> Jiefangbei or Jiangbei near 9th Street.</li>
+            <li><strong>Don't miss:</strong> Hongya Cave from across the river, Liziba Station before 9 a.m., the night cruise, 9th Street, an air raid shelter bar, midnight hotpot.</li>
+            <li><strong>Eat:</strong> Xiaomian, Zhoushixiong Hotpot, hot and sour noodles.</li>
+            <li><strong>Skip:</strong> Inside Hongya Cave and Nanbin Road bars.</li>
+          </ul>
+        </article>
+        <article class="city-card">
+          <h3>Xi'an</h3>
+          <ul>
+            <li><strong>Stay:</strong> Inside or near the city wall, close to the Muslim Quarter.</li>
+            <li><strong>Don't miss:</strong> Terracotta Army, Shaanxi History Museum, Muslim Quarter, Yongxingfang, Sajinqiao Night Market.</li>
+            <li><strong>Eat:</strong> Roujiamo, biangbiang noodles, yangrou paomo, liangpi.</li>
+          </ul>
+        </article>
+        <article class="city-card">
+          <h3>Beijing</h3>
+          <ul>
+            <li><strong>Stay:</strong> Sanlitun or Gulou.</li>
+            <li><strong>Don't miss:</strong> Forbidden City, Jingshan Park, Mutianyu Great Wall, Dada Beijing, Ghost Street.</li>
+            <li><strong>Eat:</strong> Da Dong Peking Duck, breakfast jianbing, midnight lamb-spine hotpot on Ghost Street.</li>
+            <li><strong>Skip:</strong> Wangfujing Snack Street.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <div class="grid">
+      <section class="card">
+        <h2>Install Before Boarding</h2>
+        <ul class="checklist">
+          <li>Alipay</li>
+          <li>WeChat</li>
+          <li>DiDi Chuxing</li>
+          <li>MetroMan</li>
+          <li>Trip.com</li>
+          <li>Baidu Translate</li>
+          <li>ExpressVPN</li>
+          <li>NordVPN</li>
+          <li>Nomad APAC eSIM</li>
+          <li>Google Maps offline maps</li>
+          <li>Dianping</li>
+        </ul>
+      </section>
+
+      <section class="card stack">
+        <h2>Emergency</h2>
+        <p><strong>U.S. Embassy Beijing:</strong> +86-10-8531-4000</p>
+        <p><strong>U.S. Consulate Shanghai:</strong> +86-21-8011-2000</p>
+        <p><strong>Register before departure:</strong> step.state.gov</p>
+      </section>
+    </div>
+
+    <footer>Prepared from the original Obsidian travel note as a shareable standalone web page.</footer>
+  </main>
+</body>
+</html>
