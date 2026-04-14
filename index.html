@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>China Trip Final Recommendation</title>
+  <title>China Trip Booking Plan</title>
   <style>
     :root {
       --bg: #f4efe7;
@@ -18,9 +18,7 @@
       --radius: 22px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -69,19 +67,16 @@
       color: var(--accent);
     }
 
-    h1, h2, h3 {
-      margin: 0;
-      line-height: 1.1;
-    }
+    h1, h2, h3 { margin: 0; line-height: 1.1; }
 
     h1 {
       font-size: clamp(2.4rem, 5vw, 4.5rem);
-      max-width: 9ch;
       letter-spacing: -0.04em;
+      max-width: 11ch;
     }
 
-    .hero p {
-      max-width: 62ch;
+    .hero > p {
+      max-width: 65ch;
       font-size: 1.08rem;
       margin: 18px 0 0;
       color: var(--muted);
@@ -106,7 +101,7 @@
 
     .grid {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 24px;
       margin-top: 24px;
     }
@@ -118,11 +113,21 @@
       border: 1px solid rgba(255, 255, 255, 0.55);
       box-shadow: var(--shadow);
       padding: 28px;
+      margin-top: 24px;
+    }
+
+    .card:first-of-type { margin-top: 24px; }
+
+    .card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 18px;
+      letter-spacing: -0.02em;
+      color: var(--accent-2);
     }
 
     .route {
       font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-size: clamp(1.1rem, 2.2vw, 1.45rem);
+      font-size: clamp(1.15rem, 2.2vw, 1.45rem);
       font-weight: 700;
       color: var(--accent-2);
     }
@@ -144,32 +149,51 @@
       font-weight: 700;
     }
 
-    section {
-      margin-top: 24px;
+    .mini {
+      color: var(--muted);
+      font-size: 0.96rem;
     }
 
-    section h2 {
-      font-size: 1.5rem;
-      margin-bottom: 18px;
-      letter-spacing: -0.02em;
+    .hotel-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
     }
 
-    p {
-      margin: 0;
+    .hotel {
+      padding: 20px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.5);
+      border: 1px solid var(--line);
     }
 
-    .city-block + .city-block,
-    .stack > * + * {
-      margin-top: 16px;
+    .hotel-label {
+      display: inline-block;
+      margin-bottom: 8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: rgba(15, 95, 89, 0.12);
+      color: #0f5f59;
     }
 
-    .city-block h3 {
-      font-size: 1.12rem;
+    .hotel h3 {
+      font-size: 1.05rem;
       margin-bottom: 8px;
     }
 
-    .city-block p {
+    .hotel p,
+    .hotel address {
+      margin: 0;
+      font-style: normal;
+      font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 0.9rem;
       color: var(--muted);
+      line-height: 1.5;
     }
 
     .table-wrap {
@@ -201,54 +225,28 @@
       background: rgba(255, 255, 255, 0.7);
     }
 
-    tr:last-child td {
-      border-bottom: 0;
-    }
+    tr:last-child td { border-bottom: 0; }
 
-    ol, ul {
+    ul {
       margin: 0;
       padding-left: 1.2rem;
     }
 
-    li + li {
-      margin-top: 10px;
-    }
+    li + li { margin-top: 10px; }
 
-    .cols {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 24px;
-    }
-
-    .mini {
+    .note {
+      margin-top: 16px;
+      padding: 14px 18px;
+      border-radius: 14px;
+      background: rgba(178, 74, 43, 0.07);
+      border-left: 3px solid var(--accent);
+      font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 0.9rem;
       color: var(--muted);
-      font-size: 0.95rem;
     }
 
-    .city-ref {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
-    }
-
-    .city-card {
-      padding: 22px;
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.5);
-      border: 1px solid var(--line);
-    }
-
-    .city-card ul {
-      margin-top: 12px;
-    }
-
-    .checklist {
-      columns: 2;
-      column-gap: 24px;
-    }
-
-    .checklist li {
-      break-inside: avoid;
+    a {
+      color: var(--accent);
     }
 
     footer {
@@ -261,30 +259,15 @@
 
     @media (max-width: 900px) {
       .grid,
-      .cols,
-      .city-ref {
+      .hotel-grid {
         grid-template-columns: 1fr;
-      }
-
-      .checklist {
-        columns: 1;
-      }
-
-      .hero,
-      .card {
-        padding: 24px;
       }
     }
 
-    @media (max-width: 640px) {
-      .page {
-        width: min(100% - 20px, 1120px);
-        margin-top: 10px;
-      }
-
-      h1 {
-        max-width: none;
-      }
+    @media (max-width: 700px) {
+      .hero, .card { padding: 24px; }
+      .page { width: min(100% - 20px, 1120px); margin-top: 10px; }
+      h1 { max-width: none; }
     }
   </style>
 </head>
@@ -292,273 +275,194 @@
   <main class="page">
     <header class="hero">
       <p class="eyebrow">Travel Brief</p>
-      <h1>China Trip Final Recommendation</h1>
-      <p>Four cities. Zero wasted days. Built for a fast-paced China trip focused on nightlife, culture, food, and visual spectacle without wasting time on soft detours.</p>
+      <h1>China Trip Booking Plan</h1>
+      <p>Cleaned up for booking only: four hotel cities, exact date distribution, and the fastest way to move between each stop. Built around the flight screenshot showing arrival in Shanghai on Friday, May 15, 2026 at 7:50 p.m.</p>
       <div class="meta">
-        <span>Dates: May 14 to May 24, 2026</span>
-        <span>Logged: April 7, 2026</span>
+        <span>May 15 to May 24, 2026</span>
+        <span>9 nights</span>
+        <span>Shanghai → Chongqing → Chengdu → Xi'an → Beijing out</span>
       </div>
     </header>
 
     <div class="grid">
-      <section class="card stack">
-        <div>
-          <h2>The Route</h2>
-          <p class="route">Shanghai → Chongqing → Xi'an → Beijing</p>
-          <div class="pill-list">
-            <span class="pill">Nightlife</span>
-            <span class="pill">Culture</span>
-            <span class="pill">Food</span>
-            <span class="pill">Visual Spectacle</span>
-            <span class="pill">No Dead Time</span>
-          </div>
+      <section class="card">
+        <h2>Recommended Route</h2>
+        <p class="route">Shanghai 3 nights → Chongqing 1 night → Chengdu 2 nights → Xi'an 2 nights → Beijing 1 night</p>
+        <div class="pill-list">
+          <span class="pill">Best pace</span>
+          <span class="pill">Keeps Chongqing</span>
+          <span class="pill">Includes pandas</span>
+          <span class="pill">Terracotta Army</span>
         </div>
-        <div class="mini">This route opens with the easiest landing, peaks with the most visually intense city, anchors the middle with ancient history, and closes with the Great Wall.</div>
       </section>
 
-      <section class="card stack">
-        <h2>Skipped</h2>
-        <ul>
-          <li><strong>Chengdu:</strong> Comfortable, but Chongqing hits harder for this itinerary.</li>
-          <li><strong>Shenzhen:</strong> Humid in May and not worth the detour.</li>
-          <li><strong>Hangzhou:</strong> Beautiful, but too quiet for a 20s group.</li>
-        </ul>
+      <section class="card">
+        <h2>Bottom Line</h2>
+        <p class="mini">These four sightseeing cities are worth it if Beijing is only your exit city, not a full sightseeing stop. The part that is not worth forcing into this trip is extra Beijing touring. With only 9 nights after a long-haul arrival, Shanghai, Chongqing, Chengdu, and Xi'an are the stronger use of time.</p>
       </section>
     </div>
 
     <section class="card">
-      <h2>Why These Four</h2>
-      <div class="cols">
-        <div class="city-block">
-          <h3>Shanghai</h3>
-          <p>Best U.S. flight connections, easiest English environment, and the strongest soft landing into China. It gives the trip immediate polish without culture shock.</p>
-        </div>
-        <div class="city-block">
-          <h3>Chongqing</h3>
-          <p>The key call. Chengdu is comfortable; Chongqing is unforgettable. The skyline is pure cyberpunk, the river cruise is one of the sharpest visuals in Asia, and the nightlife has real depth.</p>
-        </div>
-        <div class="city-block">
-          <h3>Xi'an</h3>
-          <p>Non-negotiable. The Terracotta Army is singular, and the city delivers one of the best old-China to night-market contrasts anywhere in the country.</p>
-        </div>
-        <div class="city-block">
-          <h3>Beijing</h3>
-          <p>The strongest ending. The Great Wall lands harder as the last major set piece, and the city still closes with serious food and underground nightlife.</p>
-        </div>
+      <h2>Book These Hotels</h2>
+      <div class="hotel-grid">
+        <article class="hotel">
+          <span class="hotel-label">May 15 to May 18 · 3 nights</span>
+          <h3>Shanghai Marriott Marquis City Centre</h3>
+          <p>Best base for first-time sightseeing and easy Bund/Nanjing Road access.</p>
+          <address>555 Middle Xizang Road (Close to Nanjing Road)<br>Huangpu District, Shanghai, China, 200003</address>
+        </article>
+        <article class="hotel">
+          <span class="hotel-label">May 18 to May 19 · 1 night</span>
+          <h3>JW Marriott Hotel Chongqing</h3>
+          <p>Good for Liziba, Hongya Cave, and Jiefangbei access.</p>
+          <address>235 Minsheng Road<br>Chongqing, China, 400010</address>
+        </article>
+        <article class="hotel">
+          <span class="hotel-label">May 19 to May 21 · 2 nights</span>
+          <h3>JW Marriott Hotel Chengdu</h3>
+          <p>Strong base for the panda day and People's Park matchmaking corner.</p>
+          <address>No. 19 Dongyu Street, Jinjiang District<br>Chengdu, Sichuan, China, 610016</address>
+        </article>
+        <article class="hotel">
+          <span class="hotel-label">May 21 to May 23 · 2 nights</span>
+          <h3>JW Marriott Hotel Xi'an</h3>
+          <p>Good final sightseeing base before moving to Beijing for departure.</p>
+          <address>No. 168 Feng Cheng 8th Road<br>Xi'an, Shaanxi, China, 710018</address>
+        </article>
       </div>
+      <div class="note">If your flight home from Beijing is very early on May 24, add one simple airport or central Beijing hotel for the night of May 23. If the flight is afternoon or evening, you can take an early Xi'an → Beijing train on May 24 instead, but that is tighter and less comfortable.</div>
     </section>
 
     <section class="card">
-      <h2>Day-by-Day Itinerary</h2>
+      <h2>Day-by-Day Plan</h2>
       <div class="table-wrap">
         <table>
           <thead>
             <tr>
-              <th>Day</th>
-              <th>City</th>
+              <th>Date</th>
+              <th>Sleep</th>
               <th>Plan</th>
+              <th>Travel</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>May 14</strong></td>
-              <td>Arrive Shanghai</td>
-              <td>Settle in. Shouning Road Night Market for dinner. Yongkang Lu for drinks.</td>
-            </tr>
-            <tr>
-              <td><strong>May 15</strong></td>
+              <td><strong>Fri, May 15</strong></td>
               <td>Shanghai</td>
-              <td>Anfu Road in the morning, The Bund at dusk, then Found 158 for Arkham or TAXX.</td>
+              <td>Arrive PVG at 7:50 p.m. from Delta. Light dinner only and sleep.</td>
+              <td>Airport transfer into Shanghai.</td>
             </tr>
             <tr>
-              <td><strong>May 16</strong></td>
+              <td><strong>Sat, May 16</strong></td>
               <td>Shanghai</td>
-              <td>Wanda Diamond League at Shanghai Stadium, then West Bund Museum and the Pompidou exhibition.</td>
+              <td>The Bund, Nanjing Road, easy first full day.</td>
+              <td>No intercity travel.</td>
             </tr>
             <tr>
-              <td><strong>May 17</strong></td>
-              <td>Fly to Chongqing</td>
-              <td>Arrive in the afternoon. See Hongya Cave from the opposite bank at night, then go to an air raid shelter bar.</td>
+              <td><strong>Sun, May 17</strong></td>
+              <td>Shanghai</td>
+              <td>French Concession, Xintiandi, relaxed second city day.</td>
+              <td>No intercity travel.</td>
             </tr>
             <tr>
-              <td><strong>May 18</strong></td>
+              <td><strong>Mon, May 18</strong></td>
               <td>Chongqing</td>
-              <td>Liziba Station early, Chaotianmen and the Crown Escalator, night river cruise, 9th Street clubs, then midnight hotpot.</td>
+              <td>Fly to Chongqing. Night view at Hongya Cave.</td>
+              <td>Best choice: direct flight from Shanghai, about 3h 10m from SHA or 3h 25m from PVG.</td>
             </tr>
             <tr>
-              <td><strong>May 19</strong></td>
-              <td>Chongqing → Xi'an</td>
-              <td>8 a.m. high-speed rail, arrival around 1:30 p.m., then Sajinqiao Night Market and bowl-smashing liquor at Yongxingfang.</td>
+              <td><strong>Tue, May 19</strong></td>
+              <td>Chengdu</td>
+              <td>Morning at Liziba to see the train through the building, then move to Chengdu.</td>
+              <td>High-speed rail Chongqing East → Chengdu, fastest about 1h 2m.</td>
             </tr>
             <tr>
-              <td><strong>May 20</strong></td>
+              <td><strong>Wed, May 20</strong></td>
+              <td>Chengdu</td>
+              <td>Panda Base early morning, then People's Park matchmaking corner later in the day.</td>
+              <td>No intercity travel.</td>
+            </tr>
+            <tr>
+              <td><strong>Thu, May 21</strong></td>
               <td>Xi'an</td>
-              <td>Terracotta Army at 8:30 a.m., Shaanxi History Museum, then the Muslim Quarter at night.</td>
+              <td>Move to Xi'an and keep the evening light around the city wall or Muslim Quarter.</td>
+              <td>High-speed rail Chengdu East → Xi'an North, fastest about 3h 10m.</td>
             </tr>
             <tr>
-              <td><strong>May 21</strong></td>
-              <td>Xi'an → Beijing</td>
-              <td>Morning bike ride on the city wall, flight to Beijing, then Ghost Street at night.</td>
+              <td><strong>Fri, May 22</strong></td>
+              <td>Xi'an</td>
+              <td>Terracotta Army in the morning, city food walk at night.</td>
+              <td>No intercity travel.</td>
             </tr>
             <tr>
-              <td><strong>May 22</strong></td>
+              <td><strong>Sat, May 23</strong></td>
               <td>Beijing</td>
-              <td>Forbidden City early, Jingshan Park for the palace view, then Sanlitun in the evening.</td>
+              <td>Move to Beijing for departure positioning. Keep this day flexible.</td>
+              <td>Best practical choice: Xi'an North → Beijing by high-speed rail, fastest about 4h 10m. Flight is about 2h 30m airborne if needed.</td>
             </tr>
             <tr>
-              <td><strong>May 23</strong></td>
-              <td>Beijing</td>
-              <td>Mutianyu Great Wall with a 7 a.m. start, then Dada Beijing at night.</td>
-            </tr>
-            <tr>
-              <td><strong>May 24</strong></td>
-              <td>Depart Beijing</td>
-              <td>Head to PEK airport.</td>
+              <td><strong>Sun, May 24</strong></td>
+              <td>Depart</td>
+              <td>Fly home from Beijing.</td>
+              <td>Airport transfer only.</td>
             </tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <div class="grid">
-      <section class="card">
-        <h2>Three Best Nights</h2>
-        <ol>
-          <li><strong>Shanghai, May 15:</strong> French Concession dinner, then Arkham. Strongest club night of the trip.</li>
-          <li><strong>Chongqing, May 18:</strong> River cruise, 9th Street until 3 a.m., then midnight hotpot. Hard to beat.</li>
-          <li><strong>Beijing, May 23:</strong> Great Wall by day, Dada Beijing by night. Perfect contrast.</li>
-        </ol>
-      </section>
-
-      <section class="card">
-        <h2>Three Best Days Overall</h2>
-        <ol>
-          <li><strong>May 17, Chongqing arrival night:</strong> The first full view of Hongya Cave from across the Jialing River is the kind of moment that resets your expectations.</li>
-          <li><strong>May 23, Great Wall:</strong> Mutianyu in May, fully green. This is one of the main reasons people come to China.</li>
-          <li><strong>May 20, Xi'an:</strong> Terracotta Army in the morning and the Muslim Quarter at night. Best one-day range of the whole trip.</li>
-        </ol>
-      </section>
-    </div>
-
     <section class="card">
-      <h2>Book These Now</h2>
+      <h2>Shanghai to Chongqing: Train vs Flight</h2>
       <div class="table-wrap">
         <table>
           <thead>
             <tr>
-              <th>Item</th>
-              <th>Why It Matters</th>
+              <th>Option</th>
+              <th>Approximate Time</th>
+              <th>Recommendation</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>Forbidden City timed entry</strong></td>
-              <td>Sells out weeks in advance in May. Book early.</td>
+              <td><strong>High-speed rail</strong></td>
+              <td>Fastest about 8h 59m; many direct services are 9 to 13+ hours depending on train.</td>
+              <td>Not recommended for this trip. It burns too much daylight.</td>
             </tr>
             <tr>
-              <td><strong>Wanda Diamond League, May 16</strong></td>
-              <td>Ticketed event with limited seats.</td>
-            </tr>
-            <tr>
-              <td><strong>Chongqing → Xi'an high-speed rail</strong></td>
-              <td>Popular route that can fill up quickly.</td>
-            </tr>
-            <tr>
-              <td><strong>Mutianyu Great Wall transport</strong></td>
-              <td>Pre-book a driver or transport to avoid friction.</td>
-            </tr>
-            <tr>
-              <td><strong>West Bund Museum / Pompidou</strong></td>
-              <td>Timed entry is recommended.</td>
-            </tr>
-            <tr>
-              <td><strong>ExpressVPN + NordVPN</strong></td>
-              <td>Install before departure. You usually cannot rely on downloading them inside China.</td>
-            </tr>
-            <tr>
-              <td><strong>Alipay</strong></td>
-              <td>Link a U.S. Visa or Mastercard before the trip.</td>
-            </tr>
-            <tr>
-              <td><strong>Nomad APAC eSIM</strong></td>
-              <td>Buy and install before departure.</td>
-            </tr>
-            <tr>
-              <td><strong>DiDi</strong></td>
-              <td>Register and verify the phone number before landing.</td>
+              <td><strong>Direct flight</strong></td>
+              <td>About 3h 10m from Shanghai Hongqiao or about 3h 25m from Shanghai Pudong.</td>
+              <td>Recommended. Even with airport time, it still saves most of the day.</td>
             </tr>
           </tbody>
         </table>
       </div>
+      <div class="note">For this itinerary, fly Shanghai → Chongqing, then use high-speed rail for Chongqing → Chengdu, Chengdu → Xi'an, and Xi'an → Beijing.</div>
     </section>
 
     <section class="card">
-      <h2>City Quick Reference</h2>
-      <div class="city-ref">
-        <article class="city-card">
-          <h3>Shanghai</h3>
-          <ul>
-            <li><strong>Stay:</strong> French Concession or Jing'an.</li>
-            <li><strong>Don't miss:</strong> Anfu Road, The Bund at dusk, Found 158, Speak Low, West Bund Museum.</li>
-            <li><strong>Eat:</strong> Yang's Fried Dumplings, Shouning Road Night Market, dinner in the French Concession.</li>
-          </ul>
-        </article>
-        <article class="city-card">
-          <h3>Chongqing</h3>
-          <ul>
-            <li><strong>Stay:</strong> Jiefangbei or Jiangbei near 9th Street.</li>
-            <li><strong>Don't miss:</strong> Hongya Cave from across the river, Liziba Station before 9 a.m., the night cruise, 9th Street, an air raid shelter bar, midnight hotpot.</li>
-            <li><strong>Eat:</strong> Xiaomian, Zhoushixiong Hotpot, hot and sour noodles.</li>
-            <li><strong>Skip:</strong> Inside Hongya Cave and Nanbin Road bars.</li>
-          </ul>
-        </article>
-        <article class="city-card">
-          <h3>Xi'an</h3>
-          <ul>
-            <li><strong>Stay:</strong> Inside or near the city wall, close to the Muslim Quarter.</li>
-            <li><strong>Don't miss:</strong> Terracotta Army, Shaanxi History Museum, Muslim Quarter, Yongxingfang, Sajinqiao Night Market.</li>
-            <li><strong>Eat:</strong> Roujiamo, biangbiang noodles, yangrou paomo, liangpi.</li>
-          </ul>
-        </article>
-        <article class="city-card">
-          <h3>Beijing</h3>
-          <ul>
-            <li><strong>Stay:</strong> Sanlitun or Gulou.</li>
-            <li><strong>Don't miss:</strong> Forbidden City, Jingshan Park, Mutianyu Great Wall, Dada Beijing, Ghost Street.</li>
-            <li><strong>Eat:</strong> Da Dong Peking Duck, breakfast jianbing, midnight lamb-spine hotpot on Ghost Street.</li>
-            <li><strong>Skip:</strong> Wangfujing Snack Street.</li>
-          </ul>
-        </article>
-      </div>
+      <h2>If You Want Less Rushing</h2>
+      <ul>
+        <li>Keep Shanghai, Chengdu, and Xi'an as the three real sightseeing bases.</li>
+        <li>Make Chongqing only a same-day stop if the Liziba train view is your main goal.</li>
+        <li>Do not add Beijing sightseeing unless you extend the trip by at least 2 more nights.</li>
+      </ul>
     </section>
 
-    <div class="grid">
-      <section class="card">
-        <h2>Install Before Boarding</h2>
-        <ul class="checklist">
-          <li>Alipay</li>
-          <li>WeChat</li>
-          <li>DiDi Chuxing</li>
-          <li>MetroMan</li>
-          <li>Trip.com</li>
-          <li>Baidu Translate</li>
-          <li>ExpressVPN</li>
-          <li>NordVPN</li>
-          <li>Nomad APAC eSIM</li>
-          <li>Google Maps offline maps</li>
-          <li>Dianping</li>
-        </ul>
-      </section>
+    <section class="card">
+      <h2>Sources</h2>
+      <ul>
+        <li><a href="https://www.trip.com/trains/china/route/shanghaihongqiao-to-chongqing/" target="_blank" rel="noreferrer">Trip.com: Shanghai Hongqiao → Chongqing train times</a></li>
+        <li><a href="https://www.flightsfrom.com/SHA-CKG" target="_blank" rel="noreferrer">FlightsFrom: Shanghai Hongqiao → Chongqing direct flight time</a></li>
+        <li><a href="https://www.flightsfrom.com/PVG-CKG" target="_blank" rel="noreferrer">FlightsFrom: Shanghai Pudong → Chongqing direct flight time</a></li>
+        <li><a href="https://us.trip.com/trains/china/route/chongqingdong-to-chengdu/" target="_blank" rel="noreferrer">Trip.com: Chongqing East → Chengdu rail times</a></li>
+        <li><a href="https://www.trip.com/trains/china/route/chengdudong-to-xianbei/" target="_blank" rel="noreferrer">Trip.com: Chengdu East → Xi'an North rail times</a></li>
+        <li><a href="https://us.trip.com/trains/china/route/xianbei-to-beijing/" target="_blank" rel="noreferrer">Trip.com: Xi'an North → Beijing rail times</a></li>
+        <li><a href="https://www.flightsfrom.com/XIY-PKX" target="_blank" rel="noreferrer">FlightsFrom: Xi'an → Beijing direct flight time</a></li>
+        <li><a href="https://www.marriott.com/en-us/hotels/ctumj-jw-marriott-hotel-chengdu/overview/" target="_blank" rel="noreferrer">Marriott: JW Marriott Hotel Chengdu</a></li>
+      </ul>
+    </section>
 
-      <section class="card stack">
-        <h2>Emergency</h2>
-        <p><strong>U.S. Embassy Beijing:</strong> +86-10-8531-4000</p>
-        <p><strong>U.S. Consulate Shanghai:</strong> +86-21-8011-2000</p>
-        <p><strong>Register before departure:</strong> step.state.gov</p>
-      </section>
-    </div>
-
-    <footer>Prepared from the original Obsidian travel note as a shareable standalone web page.</footer>
+    <footer>Prepared April 14, 2026 · Rebuilt around the actual flight screenshot date pattern and simplified for booking.</footer>
   </main>
 </body>
 </html>
