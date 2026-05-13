@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Complete bilingual 11-day China itinerary May 14–24, 2026 — hotels, nightlife, day-by-day across Shanghai, Chongqing, Xi'an, Beijing.">
+  <meta name="description" content="Complete bilingual 11-day China itinerary May 14–24, 2026 — flights, hotels, nightlife, day-by-day across Shanghai, Chongqing, Xi'an, Beijing.">
   <meta name="color-scheme" content="light dark">
   <meta property="og:title" content="China Trip · May 14–24, 2026">
-  <meta property="og:description" content="Bilingual 11-day complete itinerary: hotels, nightlife, day-by-day.">
+  <meta property="og:description" content="Bilingual 11-day complete itinerary with confirmed flights and hotels.">
   <meta property="og:type" content="website">
   <title>China Trip · May 14–24, 2026 · Complete Itinerary / 中国行程</title>
   <style>
@@ -25,6 +25,9 @@
       --warn-bg: #fff4cc;
       --warn-text: #5c4400;
       --warn-border: #b89000;
+      --info-bg: #e7f0fb;
+      --info-text: #143868;
+      --info-border: #5685c2;
       --link: #1455a0;
       --link-visited: #6a3a8c;
       --focus: #ff8800;
@@ -46,6 +49,9 @@
         --accent-2-soft: rgba(92, 198, 189, 0.14);
         --warn-bg: #3a2f00;
         --warn-text: #ffe680;
+        --info-bg: #1a2540;
+        --info-text: #b8d0f5;
+        --info-border: #5685c2;
         --link: #7cb8ff;
         --link-visited: #d4a8ff;
       }
@@ -76,20 +82,14 @@
     }
     .skip-link:focus { left: 0; }
 
-    .page {
-      width: min(1100px, calc(100% - 32px));
-      margin: 32px auto 72px;
-    }
+    .page { width: min(1100px, calc(100% - 32px)); margin: 32px auto 72px; }
 
-    /* Hero */
     .hero {
       background: var(--paper);
       border-radius: var(--radius);
       border: 1px solid rgba(255, 255, 255, 0.55);
       box-shadow: var(--shadow);
-      padding: 40px;
-      position: relative;
-      overflow: hidden;
+      padding: 40px; position: relative; overflow: hidden;
     }
     .hero::after {
       content: ""; position: absolute; inset: auto -40px -50px auto;
@@ -107,23 +107,17 @@
       margin: 0 0 0.5em;
       font-size: clamp(2rem, 4vw, 3.4rem);
       letter-spacing: -0.02em; line-height: 1.1;
-      max-width: 18ch;
+      max-width: 20ch;
     }
     h1 .zh { font-size: 0.55em; display: block; margin-top: 0.4em; letter-spacing: 0; color: var(--muted); }
-    .lede {
-      margin: 0.6em 0 0;
-      font-size: 1.1rem; color: var(--muted);
-      max-width: 60ch;
-    }
+    .lede { margin: 0.6em 0 0; font-size: 1.1rem; color: var(--muted); max-width: 60ch; }
 
-    /* Cards */
     .card {
       background: var(--paper);
       border-radius: var(--radius);
       border: 1px solid rgba(255, 255, 255, 0.55);
       box-shadow: var(--shadow);
-      padding: 32px;
-      margin-top: 28px;
+      padding: 32px; margin-top: 28px;
     }
     @media (max-width: 600px) {
       .hero, .card { padding: 24px 20px; }
@@ -132,14 +126,10 @@
     h2 {
       margin: 0 0 0.6em;
       font-size: clamp(1.4rem, 2.6vw, 1.85rem);
-      color: var(--accent);
-      letter-spacing: -0.01em;
+      color: var(--accent); letter-spacing: -0.01em;
     }
     h2 .zh { font-size: 0.7em; color: var(--muted); margin-left: 0.4em; letter-spacing: 0; }
-    h3 {
-      margin: 0 0 0.4em;
-      font-size: 1.2rem; line-height: 1.3;
-    }
+    h3 { margin: 0 0 0.4em; font-size: 1.2rem; line-height: 1.3; }
     h3 .zh { color: var(--muted); margin-left: 0.4em; font-size: 0.9em; }
 
     p, ul, ol { margin: 0.5em 0 1em; }
@@ -151,28 +141,24 @@
     a:visited { color: var(--link-visited); }
     a:hover { text-decoration-thickness: 2px; }
     a:focus-visible, summary:focus-visible, button:focus-visible {
-      outline: 3px solid var(--focus);
-      outline-offset: 3px; border-radius: 2px;
+      outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 2px;
     }
 
     .zh {
       font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans SC", sans-serif;
-      color: var(--muted);
-      font-weight: normal;
+      color: var(--muted); font-weight: normal;
     }
     .zh-bold {
       font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans SC", sans-serif;
       color: var(--ink);
     }
 
-    /* TOC */
     .toc { background: var(--accent-2-soft); border-radius: var(--radius); padding: 20px 28px; margin-top: 28px; }
     .toc h2 { color: var(--accent-2); margin-bottom: 0.4em; font-size: 1.2rem; }
     .toc ol { columns: 2; column-gap: 32px; margin: 0; padding-left: 1.4rem; }
     @media (max-width: 600px) { .toc ol { columns: 1; } }
     .toc li { break-inside: avoid; }
 
-    /* Status pills */
     .status-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -187,12 +173,10 @@
     .status-pill .label {
       font-family: "Avenir Next", "Helvetica Neue", sans-serif;
       font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.12em;
-      color: var(--accent); font-weight: 700;
-      margin: 0 0 0.3em;
+      color: var(--accent); font-weight: 700; margin: 0 0 0.3em;
     }
     .status-pill .val { margin: 0; font-size: 0.98rem; }
 
-    /* Day cards */
     .day {
       background: var(--paper-solid);
       border: 1px solid var(--line);
@@ -212,16 +196,12 @@
       padding: 4px 10px; border-radius: 999px;
       letter-spacing: 0.08em;
     }
-    .day .bi {
-      display: block;
-      padding: 0.3em 0;
-    }
+    .day .bi { display: block; padding: 0.3em 0; }
     .day .bi .en { display: block; }
     .day .bi .zh { display: block; font-size: 0.94rem; }
 
     .day .nightlife {
-      margin-top: 14px;
-      padding: 12px 16px;
+      margin-top: 14px; padding: 12px 16px;
       background: var(--accent-2-soft);
       border-left: 3px solid var(--accent-2);
       border-radius: 6px;
@@ -229,13 +209,11 @@
     .day .nightlife .label {
       font-family: "Avenir Next", "Helvetica Neue", sans-serif;
       font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.12em;
-      font-weight: 700; color: var(--accent-2);
-      margin: 0 0 0.4em;
+      font-weight: 700; color: var(--accent-2); margin: 0 0 0.4em;
     }
     .day .nightlife ul { margin: 0; padding-left: 1.3rem; }
     .day .nightlife li { font-size: 0.96rem; }
 
-    /* Tables */
     .table-wrap { overflow-x: auto; margin: 1em 0; }
     table {
       width: 100%; border-collapse: collapse;
@@ -243,30 +221,18 @@
       background: var(--paper-solid);
       border-radius: 8px; overflow: hidden;
     }
-    caption {
-      text-align: left; font-weight: 600;
-      padding: 0.4em 0; caption-side: top;
-      color: var(--muted);
-    }
-    th, td {
-      text-align: left; padding: 0.7em 0.9em;
-      border-bottom: 1px solid var(--line); vertical-align: top;
-    }
+    caption { text-align: left; font-weight: 600; padding: 0.4em 0; caption-side: top; color: var(--muted); }
+    th, td { text-align: left; padding: 0.7em 0.9em; border-bottom: 1px solid var(--line); vertical-align: top; }
     th { background: var(--accent-soft); font-weight: 700; color: var(--accent); }
     tbody tr:last-child td { border-bottom: none; }
 
-    /* Nightlife venue grid */
     .venue-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 18px;
-      margin-top: 1em;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px; margin-top: 1em;
     }
     .venue-cat {
-      background: var(--paper-solid);
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      padding: 16px 20px;
+      background: var(--paper-solid); border: 1px solid var(--line);
+      border-radius: 10px; padding: 16px 20px;
     }
     .venue-cat h4 {
       margin: 0 0 0.4em;
@@ -277,66 +243,130 @@
     .venue-cat ul { margin: 0; padding-left: 1.2rem; }
     .venue-cat li { font-size: 0.96rem; }
 
-    /* Callouts */
     .callout-warn {
-      background: var(--warn-bg);
-      color: var(--warn-text);
+      background: var(--warn-bg); color: var(--warn-text);
       border: 1px solid var(--warn-border);
-      border-radius: 8px;
-      padding: 14px 18px;
-      margin: 16px 0;
+      border-radius: 8px; padding: 14px 18px; margin: 16px 0;
     }
     .callout-warn strong { color: var(--warn-text); }
+    .callout-info {
+      background: var(--info-bg); color: var(--info-text);
+      border: 1px solid var(--info-border);
+      border-radius: 8px; padding: 14px 18px; margin: 16px 0;
+    }
+    .callout-info strong { color: var(--info-text); }
 
-    /* Hotel cards */
     .hotel-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 16px;
-      margin-top: 1em;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px; margin-top: 1em;
     }
     .hotel {
-      background: var(--paper-solid);
-      border: 1px solid var(--line);
+      background: var(--paper-solid); border: 1px solid var(--line);
       border-left: 4px solid var(--accent-2);
-      border-radius: 8px;
-      padding: 16px 18px;
+      border-radius: 8px; padding: 16px 18px;
     }
+    .hotel.booked { border-left-color: #2a8a3a; }
+    .hotel .badge {
+      display: inline-block;
+      font-family: "Avenir Next", "Helvetica Neue", sans-serif;
+      font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em;
+      font-weight: 700;
+      padding: 2px 8px; border-radius: 999px;
+      margin-bottom: 0.5em;
+    }
+    .hotel .badge.confirmed { background: rgba(42, 138, 58, 0.18); color: #2a8a3a; }
+    .hotel .badge.todo { background: var(--warn-bg); color: var(--warn-text); border: 1px solid var(--warn-border); }
     .hotel .city {
       font-family: "Avenir Next", "Helvetica Neue", sans-serif;
       font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.14em;
-      color: var(--accent-2); font-weight: 700;
-      margin: 0 0 0.3em;
+      color: var(--accent-2); font-weight: 700; margin: 0 0 0.3em;
     }
-    .hotel .nights {
-      font-size: 0.88rem; color: var(--muted);
-      margin: 0 0 0.5em;
-    }
+    .hotel .nights { font-size: 0.88rem; color: var(--muted); margin: 0 0 0.5em; }
     .hotel h3 { margin: 0 0 0.4em; font-size: 1.05rem; line-height: 1.3; color: var(--ink); }
     .hotel address { font-style: normal; font-size: 0.92rem; color: var(--muted); margin: 0.3em 0; }
     .hotel .note { font-size: 0.92rem; margin: 0.4em 0 0; }
+    .hotel .meta { font-size: 0.85rem; color: var(--muted); margin: 0.4em 0 0; font-family: "Avenir Next", "Helvetica Neue", sans-serif; }
 
-    /* Footer */
-    footer {
-      margin-top: 36px;
-      padding: 20px 28px;
-      font-size: 0.92rem; color: var(--muted);
-      text-align: center;
+    /* Flight cards */
+    .flight {
+      background: var(--paper-solid);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--accent);
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin: 16px 0;
+    }
+    .flight .meta-row {
+      font-family: "Avenir Next", "Helvetica Neue", sans-serif;
+      font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.12em;
+      color: var(--accent); font-weight: 700;
+      margin: 0 0 0.5em;
+    }
+    .flight h3 { margin: 0 0 0.5em; font-size: 1.1rem; }
+    .flight .route {
+      display: grid; grid-template-columns: 1fr auto 1fr;
+      align-items: center; gap: 16px; margin: 0.6em 0;
+    }
+    .flight .airport { text-align: center; }
+    .flight .airport .code { font-size: 1.4rem; font-weight: 700; color: var(--ink); display: block; }
+    .flight .airport .city-name { font-size: 0.85rem; color: var(--muted); display: block; }
+    .flight .airport .time { font-size: 1.05rem; color: var(--ink); display: block; margin-top: 0.2em; font-weight: 600; }
+    .flight .arrow { color: var(--accent); font-size: 1.4rem; line-height: 1; }
+    .flight .duration { text-align: center; font-size: 0.78rem; color: var(--muted); margin: 0.3em 0; }
+    .flight .details { font-size: 0.92rem; color: var(--muted); margin: 0.6em 0 0; }
+
+    .transfer-row {
+      text-align: center; padding: 8px; margin: 8px 0;
+      font-size: 0.9rem; color: var(--muted);
+      font-style: italic;
     }
 
-    /* Print */
+    /* Image attachments */
+    figure {
+      margin: 1em 0;
+      background: var(--paper-solid);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px;
+      overflow: hidden;
+    }
+    figure img {
+      display: block;
+      max-width: 100%; height: auto;
+      border-radius: 6px;
+      margin: 0 auto;
+    }
+    figcaption {
+      margin-top: 0.6em;
+      font-size: 0.9rem;
+      color: var(--muted);
+      text-align: center;
+    }
+    .attachments-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .attachments-grid figure { margin: 0; }
+
+    footer {
+      margin-top: 36px; padding: 20px 28px;
+      font-size: 0.92rem; color: var(--muted); text-align: center;
+    }
+
     @media print {
       body { background: #fff; color: #000; font-size: 11pt; }
-      .hero, .card, .day, .toc { background: #fff; box-shadow: none; border: 1px solid #888; break-inside: avoid; }
+      .hero, .card, .day, .toc, .flight, .hotel, figure { background: #fff; box-shadow: none; border: 1px solid #888; break-inside: avoid; }
       .skip-link, .toc { display: none; }
       .hero::after { display: none; }
       h2, h3, .eyebrow { color: #000; }
       .zh, .zh-bold { color: #000; }
       a { color: #000; text-decoration: none; }
       a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.85em; color: #555; }
+      figure img { max-width: 60%; }
     }
     @media (forced-colors: active) {
-      .hero, .card, .day, .toc, .hotel, .venue-cat, .status-pill, .callout-warn {
+      .hero, .card, .day, .toc, .hotel, .venue-cat, .status-pill, .callout-warn, .callout-info, .flight, figure {
         border: 1px solid CanvasText;
       }
     }
@@ -354,16 +384,24 @@
         <span class="zh" lang="zh-CN">中国行程 · 2026年5月14日–24日</span>
       </h1>
       <p class="lede">
-        Shanghai → Chongqing → Xi'an → Beijing. Complete day-by-day with hotels, nightlife, and bookings.
+        Seattle → Shanghai → Chongqing → Xi'an → Beijing → Seoul → Seattle. Complete day-by-day with confirmed flights, hotels, and nightlife.
         <br>
-        <span class="zh" lang="zh-CN">上海 → 重庆 → 西安 → 北京。完整日程，含酒店、夜生活与预订清单。</span>
+        <span class="zh" lang="zh-CN">西雅图 → 上海 → 重庆 → 西安 → 北京 → 首尔 → 西雅图。完整日程，含已确认航班、酒店与夜生活。</span>
       </p>
     </header>
+
+    <div class="callout-info" role="note" style="margin-top:28px;">
+      <strong>Plan updated 2026-05-13 · 计划已更新:</strong>
+      Arrival is <strong>Friday May 15 evening (7:50 PM PVG)</strong>, not Thursday. Chongqing hotel locked May 18–20. Beijing's only full day is May 23 (Great Wall). Items not in this version: Shanghai Port soccer match, Forbidden City, Red Theatre kung fu show, calligraphy class, dumpling class, cupping massage — schedule didn't fit.
+      <br>
+      <span class="zh" lang="zh-CN">实际抵沪：5月15日（周五）晚 7:50。重庆酒店锁定5月18–20日。北京仅5月23日整天可游（长城）。已舍：上海海港球赛、故宫、红剧场功夫、书法课、包饺子、拔罐。</span>
+    </div>
 
     <nav class="toc card" aria-label="Table of contents" style="margin-top:28px; padding:24px 32px;">
       <h2>Contents <span class="zh" lang="zh-CN">目录</span></h2>
       <ol>
         <li><a href="#status">Status &amp; decisions</a></li>
+        <li><a href="#flights">Flights (confirmed)</a></li>
         <li><a href="#hotels">Hotels</a></li>
         <li><a href="#bookings">Priority bookings</a></li>
         <li><a href="#days">Day-by-day</a></li>
@@ -380,94 +418,186 @@
         <h2 id="status-h">Status &amp; decisions <span class="zh" lang="zh-CN">状态与决定</span></h2>
         <div class="status-grid">
           <div class="status-pill">
-            <p class="label">Kung fu · 功夫</p>
-            <p class="val">Red Theatre Beijing show (Shaolin/Henan dropped) <br><span class="zh" lang="zh-CN">北京红剧场（河南少林寺舍去）</span></p>
+            <p class="label">Outbound flight · 出发航班</p>
+            <p class="val">DL0281 · Thu May 14 · SEA 16:05 → PVG 19:50 (May 15) <br><span class="zh" lang="zh-CN">达美 · 周四西雅图起飞 · 周五19:50抵沪</span></p>
+          </div>
+          <div class="status-pill">
+            <p class="label">Return flight · 回程航班</p>
+            <p class="val">MU2073 + DL0196 · Sun May 24 · PKX 11:45 → ICN → SEA 13:11 <br><span class="zh" lang="zh-CN">东方+达美 · 经首尔回西雅图</span></p>
+          </div>
+          <div class="status-pill">
+            <p class="label">Chongqing hotel · 重庆酒店</p>
+            <p class="val">轻居酒店 解放碑较场口 · BOOKED · May 18–20 · ¥1266 <br><span class="zh" lang="zh-CN">已订 · 2晚 · 共¥1266</span></p>
+          </div>
+          <div class="status-pill">
+            <p class="label">Shanghai · Xi'an · Beijing hotels</p>
+            <p class="val">Recommendations only — not yet booked <br><span class="zh" lang="zh-CN">仅为推荐 · 尚未预订</span></p>
           </div>
           <div class="status-pill">
             <p class="label">Themed banquet · 主题宴</p>
-            <p class="val">Gong Yan 宫宴 / Xu Yan 徐宴 — Shanghai <br><span class="zh" lang="zh-CN">上海宫宴 / 徐宴</span></p>
-          </div>
-          <div class="status-pill">
-            <p class="label">Soccer · 看球</p>
-            <p class="val">Shanghai Port vs Zhejiang · May 15 · SAIC Motor Pudong Arena <br><span class="zh" lang="zh-CN">上海海港 vs 浙江队 · 5月15日 · 上汽浦东足球场</span></p>
+            <p class="val">Gong Yan 宫宴 / Xu Yan 徐宴 — Shanghai May 17 lunch</p>
           </div>
           <div class="status-pill">
             <p class="label">Huaqing · 华清宫</p>
-            <p class="val">Daytime + Chang Hen Ge night show <br><span class="zh" lang="zh-CN">日间 + 长恨歌夜场</span></p>
+            <p class="val">Daytime + Chang Hen Ge 长恨歌 night show · May 21 <br><span class="zh" lang="zh-CN">5月21日 日间 + 长恨歌夜场</span></p>
           </div>
-          <div class="status-pill">
-            <p class="label">Hotel chain · 酒店连锁</p>
-            <p class="val">Atour 亚朵 in every city for consistency <br><span class="zh" lang="zh-CN">全程亚朵酒店统一体验</span></p>
+        </div>
+      </section>
+
+      <section class="card" id="flights" aria-labelledby="flights-h">
+        <h2 id="flights-h">Flights (confirmed) <span class="zh" lang="zh-CN">航班（已确认）</span></h2>
+        <p>Both legs of the journey are booked. Screenshots attached for reference. <span class="zh" lang="zh-CN">往返均已预订，附原始截图。</span></p>
+
+        <div class="flight" aria-labelledby="fl-out">
+          <p class="meta-row">Outbound · 去程</p>
+          <h3 id="fl-out">DL0281 · Delta Air Lines · Airbus A350-900</h3>
+          <div class="route">
+            <div class="airport">
+              <span class="code">SEA</span>
+              <span class="city-name">Seattle, WA</span>
+              <span class="time">Thu May 14 · 16:05</span>
+            </div>
+            <div class="arrow" aria-hidden="true">✈</div>
+            <div class="airport">
+              <span class="code">PVG</span>
+              <span class="city-name">Shanghai Pudong T1</span>
+              <span class="time">Fri May 15 · 19:50</span>
+            </div>
           </div>
-          <div class="status-pill">
-            <p class="label">Anthologia backups</p>
-            <p class="val">Fu He Hui → Ling Long → Yong Yi Ting → Bird <br><span class="zh" lang="zh-CN">福和慧 → 玲珑 → 雍颐庭 → 柏鸟</span></p>
+          <p class="duration">12h 45m · gate A3 → Terminal 1 Gate 24</p>
+          <p class="details">Status: On time as of 2026-05-13. <span class="zh" lang="zh-CN">截至5月13日：准点</span></p>
+        </div>
+
+        <div class="flight" aria-labelledby="fl-r1">
+          <p class="meta-row">Return leg 1 · 回程第一段</p>
+          <h3 id="fl-r1">MU2073 · China Eastern · Airbus A321</h3>
+          <div class="route">
+            <div class="airport">
+              <span class="code">PKX</span>
+              <span class="city-name">Beijing Daxing</span>
+              <span class="time">Sun May 24 · 11:45</span>
+            </div>
+            <div class="arrow" aria-hidden="true">✈</div>
+            <div class="airport">
+              <span class="code">ICN</span>
+              <span class="city-name">Seoul Incheon</span>
+              <span class="time">Sun May 24 · 14:50</span>
+            </div>
           </div>
+          <p class="duration">~3h 5m</p>
+        </div>
+
+        <p class="transfer-row">⌛ Transfer in Seoul · 4h 10m layover · 首尔转机 4小时10分钟</p>
+
+        <div class="flight" aria-labelledby="fl-r2">
+          <p class="meta-row">Return leg 2 · 回程第二段</p>
+          <h3 id="fl-r2">DL0196 · Delta Air Lines · Airbus A350-900</h3>
+          <div class="route">
+            <div class="airport">
+              <span class="code">ICN</span>
+              <span class="city-name">Seoul Incheon</span>
+              <span class="time">Sun May 24 · 19:00</span>
+            </div>
+            <div class="arrow" aria-hidden="true">✈</div>
+            <div class="airport">
+              <span class="code">SEA</span>
+              <span class="city-name">Seattle/Tacoma</span>
+              <span class="time">Sun May 24 · 13:11</span>
+            </div>
+          </div>
+          <p class="duration">Arrives same calendar day in Seattle (crosses date line) · 跨越国际日期变更线，当日抵达西雅图</p>
+        </div>
+
+        <div class="callout-warn" role="note">
+          <strong>May 24 departure logistics · 5月24日 离京安排:</strong>
+          Beijing Daxing (PKX) is ~60 km south of central Beijing. Leave the hotel by <strong>~7:30 AM</strong> for an 11:45 AM flight. Allow 60–80 min travel + 90 min airport buffer. <br>
+          <span class="zh" lang="zh-CN">大兴机场距市中心约60公里，11:45航班建议早上7:30前出发。</span>
+        </div>
+
+        <h3 style="margin-top:1.6em;">Flight screenshots · 航班截图</h3>
+        <div class="attachments-grid">
+          <figure>
+            <img src="assets/flight-outbound-sea-pvg.jpg" alt="Delta flight DL0281 booking screenshot: Seattle (SEA) to Shanghai Pudong (PVG), Thursday May 14 at 4:05 PM departure to 7:50 PM arrival, Airbus A350-900, status On Time, gate A3 to Terminal 1 gate 24, flight duration 12 hours 45 minutes.">
+            <figcaption>Outbound · DL0281 SEA → PVG · 截图来自 Delta App</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/flight-return-pkx-icn-sea.png" alt="Flying Blue return booking screenshot: Beijing Daxing to Seoul Incheon on MU2073 China Eastern Airbus A321, Sunday May 24 at 11:45 AM to 2:50 PM; transfer time 4 hours 10 minutes; then Seoul Incheon to Seattle Tacoma on DL0196 Delta Airbus A350-900, Sunday May 24 at 7:00 PM departure arriving 1:11 PM.">
+            <figcaption>Return · PKX → ICN → SEA · 截图来自 Flying Blue</figcaption>
+          </figure>
         </div>
       </section>
 
       <section class="card" id="hotels" aria-labelledby="hotels-h">
         <h2 id="hotels-h">Hotels <span class="zh" lang="zh-CN">酒店预订</span></h2>
-        <p>Atour chain across all four cities for consistent service and city-center locations. Book directly via Atour app, Trip.com, or Booking.com. <span class="zh" lang="zh-CN">全程亚朵酒店连锁，市中心位置，App / 携程 / Booking 均可预订。</span></p>
+        <p>Chongqing booked. Shanghai, Xi'an, Beijing are recommendations — book ASAP via Atour app / Trip.com / Booking.com. <span class="zh" lang="zh-CN">重庆已订；上海、西安、北京为推荐方案，请尽快通过亚朵App / 携程 / Booking 预订。</span></p>
 
         <div class="hotel-grid">
           <article class="hotel" aria-labelledby="h-sh">
+            <span class="badge todo">To book · 待订</span>
             <p class="city">Shanghai · 上海</p>
-            <p class="nights">3 nights · May 14–17 · check-out May 17 AM<br><span class="zh" lang="zh-CN">3晚 · 5月14–17日 · 5月17日早退房</span></p>
+            <p class="nights">3 nights · May 15–18 · arrive PVG May 15 evening<br><span class="zh" lang="zh-CN">3晚 · 5月15–18日 · 5月15日晚抵沪</span></p>
             <h3 id="h-sh">Atour Hotel Nanjing Road Pedestrian Street <span class="zh-bold" lang="zh-CN">亚朵酒店 上海南京路步行街店</span></h3>
             <address>No. 586 Ningbo Road, Huangpu District 200001 <br><span class="zh" lang="zh-CN">上海市黄浦区宁波路586号</span></address>
             <p class="note">City-center base for Nanjing Road 南京路 and The Bund 外滩.</p>
           </article>
 
-          <article class="hotel" aria-labelledby="h-cq">
+          <article class="hotel booked" aria-labelledby="h-cq">
+            <span class="badge confirmed">✓ Booked · 已订</span>
             <p class="city">Chongqing · 重庆</p>
-            <p class="nights">2 nights · May 17–19 · check-out May 19 AM<br><span class="zh" lang="zh-CN">2晚 · 5月17–19日 · 5月19日早退房</span></p>
-            <h3 id="h-cq">Atour Hotel Bayi Square, Jiefangbei <span class="zh-bold" lang="zh-CN">亚朵酒店 重庆解放碑八一广场店</span></h3>
-            <address>No. 85 Jiaochangkou, Yuzhong District 400010 <br><span class="zh" lang="zh-CN">重庆市渝中区较场口85号</span></address>
-            <p class="note">Walking distance to Jiefangbei 解放碑 and Hongya Cave 洪崖洞.</p>
+            <p class="nights">2 nights · May 18–20 · check-out May 20 AM<br><span class="zh" lang="zh-CN">2晚 · 5月18–20日 · 5月20日早退房</span></p>
+            <h3 id="h-cq" lang="zh-CN">重庆解放碑较场口地铁站轻居酒店</h3>
+            <address lang="zh-CN">重庆市渝中区青年路77号万摩购物中心5层<br><span class="zh">5F, Wanmo Shopping Center, No. 77 Qingnian Rd, Yuzhong District</span></address>
+            <p class="meta">2× Comfort King Room (18 m², 1.8 m bed) · with breakfast voucher · <strong>¥1266</strong> total<br><span class="zh" lang="zh-CN">舒适大床房 ×2 · 含元气早餐券 · 共¥1266</span></p>
+            <p class="meta">Free cancellation before 2026-05-18 12:00 · <span class="zh" lang="zh-CN">5月18日12:00前可免费取消</span></p>
+            <p class="note">Walkable to Jiefangbei 解放碑 and Hongya Cave 洪崖洞. Direct metro access.</p>
           </article>
 
           <article class="hotel" aria-labelledby="h-xa">
+            <span class="badge todo">To book · 待订</span>
             <p class="city">Xi'an · 西安</p>
-            <p class="nights">2 nights · May 19–21 · check-out May 21 PM after HSR<br><span class="zh" lang="zh-CN">2晚 · 5月19–21日 · 5月21日下午高铁前退房</span></p>
+            <p class="nights">2 nights · May 20–22 · arrive PM May 20<br><span class="zh" lang="zh-CN">2晚 · 5月20–22日 · 5月20日下午抵达</span></p>
             <h3 id="h-xa">Atour Hotel Xi'an Bell Tower South Gate <span class="zh-bold" lang="zh-CN">亚朵酒店 西安钟楼南门店</span></h3>
             <address>No. 331 Huancheng South Road East Section, Beilin District 710001 <br><span class="zh" lang="zh-CN">西安市碑林区环城南路东段331号</span></address>
             <p class="note">Inside the old city near Bell Tower 钟楼 and Muslim Quarter 回民街.</p>
           </article>
 
           <article class="hotel" aria-labelledby="h-bj">
+            <span class="badge todo">To book · 待订</span>
             <p class="city">Beijing · 北京</p>
-            <p class="nights">3 nights · May 21–24 · check-out May 24 AM<br><span class="zh" lang="zh-CN">3晚 · 5月21–24日 · 5月24日早退房</span></p>
+            <p class="nights">2 nights · May 22–24 · check-out May 24 AM (early)<br><span class="zh" lang="zh-CN">2晚 · 5月22–24日 · 5月24日清晨退房</span></p>
             <h3 id="h-bj">Atour Hotel Beijing Tiananmen Wangfujing <span class="zh-bold" lang="zh-CN">亚朵酒店 北京天安门王府井店</span></h3>
             <address>No. 241 Wangfujing Street, Dongcheng District <br><span class="zh" lang="zh-CN">北京市东城区王府井大街241号</span></address>
-            <p class="note">Steps from Wangfujing 王府井 and walkable to Forbidden City 故宫.</p>
+            <p class="note">Note: PKX airport is ~60 km away — allow 60–80 min ride to PKX for May 24 departure.</p>
           </article>
         </div>
+
+        <h3 style="margin-top:1.6em;">Chongqing booking screenshot · 重庆酒店订单截图</h3>
+        <figure style="max-width:520px; margin-left:auto; margin-right:auto;">
+          <img src="assets/hotel-chongqing-booking.jpg" alt="Chongqing hotel booking confirmation in Chinese: 重庆解放碑较场口地铁站轻居酒店, address 重庆市渝中区青年路77号万摩购物中心5层, two Comfort King Rooms (舒适大床房) at 18 square meters with 1.8 meter beds, check-in 2026-05-18, check-out 2026-05-20, total ¥1266, free cancellation before 2026-05-18 12:00, includes a double breakfast voucher.">
+          <figcaption>Confirmed booking · ¥1266 · 2 nights · 2 rooms</figcaption>
+        </figure>
       </section>
 
       <section class="card" id="bookings" aria-labelledby="bookings-h">
         <h2 id="bookings-h">Priority bookings <span class="zh" lang="zh-CN">优先预订清单</span></h2>
-        <p>Listed in order of urgency — top items book out fastest. <span class="zh" lang="zh-CN">按紧迫程度排序。</span></p>
+        <p>Listed in order of urgency. <span class="zh" lang="zh-CN">按紧迫程度排序。</span></p>
         <ol>
-          <li><strong>Anthologia</strong> — Shanghai, May 14 dinner. <span class="zh" lang="zh-CN">立即联系，满则切备选</span></li>
-          <li><strong>Atour hotels × 4 cities</strong> — book all four at once via Atour app. <span class="zh" lang="zh-CN">亚朵App统一预订4城</span></li>
-          <li><strong>Shanghai Port ticket</strong> — May 15 match, Damai 大麦. <span class="zh" lang="zh-CN">5月15日海港主场票</span></li>
-          <li><strong>teamLab Borderless Shanghai</strong> — May 16 midday timed entry. <span class="zh" lang="zh-CN">上海无界美术馆</span></li>
-          <li><strong>Wanda Diamond League</strong> — May 16 evening. <span class="zh" lang="zh-CN">万达钻石联赛</span></li>
-          <li><strong>Forbidden City</strong> — May 22 official online reservation. <span class="zh" lang="zh-CN">故宫官方预约</span></li>
-          <li><strong>Mutianyu Great Wall transport</strong> — May 23. <span class="zh" lang="zh-CN">慕田峪长城接送</span></li>
-          <li><strong>Gong Yan / Xu Yan Shanghai</strong> — May 16 dinner.</li>
-          <li><strong>Xiao Dadong</strong> — Beijing, May 22 dinner, Dianping. <span class="zh" lang="zh-CN">小大董 大众点评</span></li>
-          <li><strong>Hotpot + 变脸 face-changing show</strong> — Chongqing, May 18 dinner.</li>
-          <li><strong>Huaqing Hot Springs + Chang Hen Ge night show</strong> — May 20. <span class="zh" lang="zh-CN">华清宫 + 长恨歌</span></li>
-          <li><strong>Calligraphy + seal carving</strong> — Xi'an, May 21 AM studio class.</li>
-          <li><strong>Dumpling class</strong> — Beijing, May 22 PM hutong studio.</li>
-          <li><strong>Capital Spirits baiju tasting</strong> — Beijing, May 21 PM, Wudaoying Hutong.</li>
-          <li><strong>Chongqing Zoo panda</strong> — May 18 timed entry. <span class="zh" lang="zh-CN">重庆动物园熊猫馆</span></li>
-          <li><strong>Shanghai photographer</strong> — May 15 daytime, Xiaohongshu. <span class="zh" lang="zh-CN">小红书约拍</span></li>
-          <li><strong>Chongqing → Xi'an HSR</strong> — May 19, 8 am. <span class="zh" lang="zh-CN">重庆—西安高铁</span></li>
-          <li><strong>Xi'an → Beijing HSR</strong> — May 21 PM. <span class="zh" lang="zh-CN">西安—北京高铁</span></li>
-          <li><strong>Red Theatre · Legend of Kung Fu</strong> — Beijing, May 22, 7:30 pm.</li>
+          <li><strong>Shanghai Atour Nanjing Rd</strong> — 3 nights May 15–18 <span class="zh" lang="zh-CN">3晚</span></li>
+          <li><strong>Xi'an Atour Bell Tower South Gate</strong> — 2 nights May 20–22</li>
+          <li><strong>Beijing Atour Wangfujing</strong> — 2 nights May 22–24</li>
+          <li><strong>Shanghai → Chongqing flight</strong> — May 18 midday/afternoon (SHA/PVG → CKG, ~3 hr)</li>
+          <li><strong>Chongqing → Xi'an flight</strong> — May 20 afternoon (CKG → XIY, ~2 hr) <em>chosen over HSR (~11 hr)</em></li>
+          <li><strong>Xi'an → Beijing HSR</strong> — May 22 midday (~4.5 hr)</li>
+          <li><strong>Anthologia</strong> — Shanghai, May 17 dinner. Backups: Fu He Hui / Ling Long / Yong Yi Ting / Bird</li>
+          <li><strong>teamLab Borderless Shanghai</strong> — May 17 midday timed entry</li>
+          <li><strong>Wanda Diamond League</strong> — May 16 evening at Shanghai Stadium</li>
+          <li><strong>Gong Yan / Xu Yan Shanghai</strong> — May 17 lunch</li>
+          <li><strong>Hotpot + 变脸 face-changing show</strong> — Chongqing, May 19 dinner</li>
+          <li><strong>Chongqing Zoo panda</strong> — May 19 timed entry</li>
+          <li><strong>Terracotta Army</strong> + <strong>Huaqing Hot Springs + Chang Hen Ge night show</strong> — May 21</li>
+          <li><strong>Mutianyu Great Wall transport</strong> — May 23 (full day)</li>
+          <li><strong>Xiao Dadong</strong> — Beijing, May 23 dinner (after Great Wall)</li>
+          <li><strong>Shanghai photographer</strong> — May 16 daytime, Xiaohongshu 小红书</li>
         </ol>
       </section>
 
@@ -475,168 +605,158 @@
         <h2 id="days-h">Day-by-day <span class="zh" lang="zh-CN">每日行程</span></h2>
 
         <article class="day" aria-labelledby="d1">
-          <h3 id="d1"><span class="day-num">Day 1</span> May 14 · Thursday · Arrive Shanghai <span class="zh" lang="zh-CN">5月14日 周四 抵达上海</span></h3>
-          <span class="bi"><span class="en">Land Shanghai · check in <strong>Atour Nanjing Road</strong></span><span class="zh" lang="zh-CN">抵沪 · 入住亚朵南京路步行街店</span></span>
-          <span class="bi"><span class="en">Dinner: <strong>Anthologia</strong> (immersive theatrical Japanese tasting, ~8 courses, 19:00 sharp)</span><span class="zh" lang="zh-CN">晚餐：Anthologia 沉浸式日料 tasting menu，19:00 准时</span></span>
-          <span class="bi"><span class="en">Nightcap: <strong>Niang Qin 娘亲</strong> TCM cocktail bar</span><span class="zh" lang="zh-CN">夜宵：娘亲（中药主题鸡尾酒吧）</span></span>
-          <div class="nightlife">
-            <p class="label">Late-night option · 夜场</p>
-            <ul>
-              <li><strong>Speak Low</strong> — speakeasy classic, Fumin Rd 富民路</li>
-              <li><strong>Flask</strong> — hidden door behind sandwich shop, Yongfu Rd 永福路</li>
-            </ul>
-          </div>
+          <h3 id="d1"><span class="day-num">Day 1</span> May 14 · Thursday · Depart Seattle <span class="zh" lang="zh-CN">5月14日 周四 西雅图出发</span></h3>
+          <span class="bi"><span class="en">16:05 PT: Depart SEA on DL0281, Airbus A350-900 (12h 45m)</span><span class="zh" lang="zh-CN">下午4:05 西雅图起飞 达美 DL0281</span></span>
+          <span class="bi"><span class="en">In flight overnight</span><span class="zh" lang="zh-CN">机上过夜</span></span>
         </article>
 
         <article class="day" aria-labelledby="d2">
-          <h3 id="d2"><span class="day-num">Day 2</span> May 15 · Friday · Shanghai + Soccer <span class="zh" lang="zh-CN">5月15日 周五 上海 + 看球</span></h3>
-          <span class="bi"><span class="en">AM: <strong>Anfu Rd 安福路</strong> / French Concession wander</span><span class="zh" lang="zh-CN">上午：安福路 / 法租界 闲逛</span></span>
-          <span class="bi"><span class="en">Photographer block (~4 hr): Anfu Rd → Bund → Tianzifang</span><span class="zh" lang="zh-CN">约拍4小时：安福路 → 外滩 → 田子坊</span></span>
-          <span class="bi"><span class="en">Late afternoon: <strong>Tianzifang 田子坊</strong></span><span class="zh" lang="zh-CN">傍晚：田子坊</span></span>
-          <span class="bi"><span class="en">Early dinner near stadium</span><span class="zh" lang="zh-CN">球场附近简餐</span></span>
-          <span class="bi"><span class="en">⚽ Evening: <strong>Shanghai Port vs Zhejiang Pro</strong> @ SAIC Motor Pudong Arena</span><span class="zh" lang="zh-CN">傍晚：上海海港 vs 浙江队 @ 上汽浦东足球场</span></span>
+          <h3 id="d2"><span class="day-num">Day 2</span> May 15 · Friday · Arrive Shanghai <span class="zh" lang="zh-CN">5月15日 周五 抵达上海</span></h3>
+          <span class="bi"><span class="en">19:50 local: Arrive PVG Terminal 1, Gate 24</span><span class="zh" lang="zh-CN">晚7:50 抵达浦东机场 T1 24号登机口</span></span>
+          <span class="bi"><span class="en">~21:00: Customs &amp; baggage; taxi/Didi to <strong>Atour Nanjing Road</strong> (~45 min)</span><span class="zh" lang="zh-CN">通关取行李 · 滴滴至亚朵南京路店（约45分钟）</span></span>
+          <span class="bi"><span class="en">~22:30: Hotel check-in, late noodles/dim sum near hotel</span><span class="zh" lang="zh-CN">入住 · 酒店附近吃夜宵</span></span>
           <div class="nightlife">
-            <p class="label">Post-match drinks · 球赛后</p>
+            <p class="label">Optional nightcap if energy permits · 视体力</p>
             <ul>
-              <li><strong>Char Bar</strong> rooftop (Hotel Indigo Bund) — Bund skyline, smart casual</li>
-              <li><strong>Captain Bar</strong> — old-school Bund view rooftop, no dress code</li>
+              <li><strong>Niang Qin 娘亲</strong> TCM cocktail bar (if still open)</li>
             </ul>
           </div>
         </article>
 
         <article class="day" aria-labelledby="d3">
           <h3 id="d3"><span class="day-num">Day 3</span> May 16 · Saturday · Shanghai + Diamond League <span class="zh" lang="zh-CN">5月16日 周六 上海 + 钻石联赛</span></h3>
-          <span class="bi"><span class="en">AM: <strong>AP Plaza</strong> (Pudong)</span><span class="zh" lang="zh-CN">上午：AP 名品广场（浦东）</span></span>
-          <span class="bi"><span class="en">Midday: <strong>teamLab Borderless</strong></span><span class="zh" lang="zh-CN">中午：上海无界美术馆</span></span>
-          <span class="bi"><span class="en">Late afternoon: rest / hotel</span><span class="zh" lang="zh-CN">傍晚：休息</span></span>
-          <span class="bi"><span class="en">Dinner: <strong>Gong Yan 宫宴 / Xu Yan 徐宴</strong> themed banquet</span><span class="zh" lang="zh-CN">晚餐：宫宴 / 徐宴 主题宴</span></span>
+          <span class="bi"><span class="en">AM: <strong>Anfu Rd 安福路</strong> / French Concession brunch &amp; wander</span><span class="zh" lang="zh-CN">上午：安福路 / 法租界 早午餐 + 闲逛</span></span>
+          <span class="bi"><span class="en">Midday: Photographer block (~4 hr) — Anfu Rd → Bund → Tianzifang</span><span class="zh" lang="zh-CN">约拍4小时：安福路 → 外滩 → 田子坊</span></span>
+          <span class="bi"><span class="en">Late afternoon: <strong>Tianzifang 田子坊</strong></span><span class="zh" lang="zh-CN">傍晚：田子坊</span></span>
+          <span class="bi"><span class="en">Early dinner near stadium</span><span class="zh" lang="zh-CN">球场附近简餐</span></span>
           <span class="bi"><span class="en">🏃 Evening: <strong>Wanda Diamond League</strong> @ Shanghai Stadium</span><span class="zh" lang="zh-CN">傍晚：万达钻石联赛 @ 上海体育场</span></span>
           <div class="nightlife">
-            <p class="label">Clubs · 夜店</p>
+            <p class="label">After Diamond League · 赛后</p>
             <ul>
-              <li><strong>Arkham</strong> — Shanghai's top techno venue</li>
-              <li><strong>Elevator</strong> — underground/queer-friendly</li>
-              <li><strong>TAXX / Found 158</strong> — high-energy bottle-service mainstream</li>
-              <li><strong>Dada</strong> — indie / dive vibes, hipster crowd</li>
+              <li><strong>Char Bar / Captain Bar</strong> rooftops with Bund view</li>
+              <li><strong>Speak Low</strong> speakeasy if quieter vibe</li>
             </ul>
           </div>
         </article>
 
         <article class="day" aria-labelledby="d4">
-          <h3 id="d4"><span class="day-num">Day 4</span> May 17 · Sunday · Shanghai → Chongqing <span class="zh" lang="zh-CN">5月17日 周日 上海→重庆</span></h3>
-          <span class="bi"><span class="en">Morning check out, fly Shanghai → Chongqing (~3 hr)</span><span class="zh" lang="zh-CN">上午退房，飞重庆（约3小时）</span></span>
-          <span class="bi"><span class="en">Check in <strong>Atour Jiefangbei</strong></span><span class="zh" lang="zh-CN">入住亚朵解放碑店</span></span>
-          <span class="bi"><span class="en">Evening: <strong>Hongya Cave 洪崖洞</strong> night views</span><span class="zh" lang="zh-CN">傍晚：洪崖洞夜景</span></span>
-          <span class="bi"><span class="en">Late dinner: street food on Bayi Rd 八一路</span><span class="zh" lang="zh-CN">夜宵：八一路小吃街</span></span>
+          <h3 id="d4"><span class="day-num">Day 4</span> May 17 · Sunday · Shanghai art + banquet <span class="zh" lang="zh-CN">5月17日 周日 上海艺术 + 主题宴</span></h3>
+          <span class="bi"><span class="en">AM: <strong>AP Plaza</strong> (Pudong) shopping</span><span class="zh" lang="zh-CN">上午：AP 名品广场（浦东）</span></span>
+          <span class="bi"><span class="en">Lunch: <strong>Gong Yan 宫宴 / Xu Yan 徐宴</strong> themed banquet</span><span class="zh" lang="zh-CN">午餐：宫宴 / 徐宴 主题宴</span></span>
+          <span class="bi"><span class="en">Afternoon: <strong>teamLab Borderless</strong> Shanghai (timed entry)</span><span class="zh" lang="zh-CN">下午：上海无界美术馆（须预约）</span></span>
+          <span class="bi"><span class="en">Dinner: <strong>Anthologia</strong> (immersive theatrical Japanese, 19:00 sharp)</span><span class="zh" lang="zh-CN">晚餐：Anthologia 沉浸式日料（19:00 准时）</span></span>
+          <span class="bi"><span class="en">Late: <strong>Niang Qin 娘亲</strong> TCM cocktail bar</span><span class="zh" lang="zh-CN">夜宵：娘亲</span></span>
           <div class="nightlife">
-            <p class="label">Rooftop drinks with river view · 江景天台</p>
+            <p class="label">Clubs · 夜店</p>
             <ul>
-              <li><strong>Bar 62</strong> — high-floor view of Jiefangbei skyline</li>
-              <li><strong>M1NT</strong> — Chongqing branch, stylish rooftop</li>
+              <li><strong>Arkham</strong> — Shanghai's top techno venue</li>
+              <li><strong>Elevator</strong> — underground / queer-friendly</li>
+              <li><strong>TAXX / Found 158</strong> — high-energy bottle service</li>
+              <li><strong>Dada</strong> — indie / dive crowd</li>
             </ul>
           </div>
         </article>
 
         <article class="day" aria-labelledby="d5">
-          <h3 id="d5"><span class="day-num">Day 5</span> May 18 · Monday · Chongqing full day <span class="zh" lang="zh-CN">5月18日 周一 重庆全天</span></h3>
-          <span class="bi"><span class="en">Breakfast: <strong>xiaomian 小面</strong> (Chongqing chili noodles)</span><span class="zh" lang="zh-CN">早餐：重庆小面</span></span>
-          <span class="bi"><span class="en"><strong>Liziba monorail 李子坝穿楼轻轨</strong></span><span class="zh" lang="zh-CN">李子坝穿楼轻轨</span></span>
-          <span class="bi"><span class="en"><strong>Yangtze River cable car 长江索道</strong></span><span class="zh" lang="zh-CN">长江索道</span></span>
-          <span class="bi"><span class="en"><strong>Chaotianmen 朝天门</strong> two-rivers confluence</span><span class="zh" lang="zh-CN">朝天门两江交汇</span></span>
-          <span class="bi"><span class="en">Midday: <strong>Chongqing Zoo</strong> — pandas (~1.5 hr, timed entry)</span><span class="zh" lang="zh-CN">中午：重庆动物园熊猫馆（约1.5小时，需预约）</span></span>
-          <span class="bi"><span class="en">Late afternoon: rest before hot pot</span><span class="zh" lang="zh-CN">下午：休息备战火锅</span></span>
-          <span class="bi"><span class="en">Dinner: <strong>hot pot + 变脸 face-changing show + rabbit head starter</strong></span><span class="zh" lang="zh-CN">晚餐：火锅 + 变脸表演 + 兔头开胃</span></span>
+          <h3 id="d5"><span class="day-num">Day 5</span> May 18 · Monday · Shanghai → Chongqing <span class="zh" lang="zh-CN">5月18日 周一 上海→重庆</span></h3>
+          <span class="bi"><span class="en">AM: Late breakfast, check out of Atour Nanjing Rd</span><span class="zh" lang="zh-CN">上午：早餐 · 退房</span></span>
+          <span class="bi"><span class="en">Midday: Fly Shanghai → Chongqing (~3 hr; SHA Hongqiao or PVG → CKG Jiangbei)</span><span class="zh" lang="zh-CN">中午：飞重庆江北机场（约3小时）</span></span>
+          <span class="bi"><span class="en">PM arrival: Check in <strong>轻居酒店 Jiefangbei 较场口</strong></span><span class="zh" lang="zh-CN">下午抵达：入住轻居酒店 解放碑较场口店</span></span>
+          <span class="bi"><span class="en">Evening: <strong>Hongya Cave 洪崖洞</strong> night views (walk from hotel)</span><span class="zh" lang="zh-CN">傍晚：洪崖洞夜景（酒店步行可达）</span></span>
+          <span class="bi"><span class="en">Late dinner: street food on Bayi Rd 八一路</span><span class="zh" lang="zh-CN">夜宵：八一路小吃街</span></span>
           <div class="nightlife">
-            <p class="label">9th St clubs → KTV all night · 九街通宵</p>
+            <p class="label">Rooftop drinks with river view · 江景天台</p>
             <ul>
-              <li><strong>ESMi</strong> — biggest Chongqing club, hip-hop / EDM</li>
-              <li><strong>SPACE</strong> — high-energy, bottle service</li>
-              <li><strong>PLAY HOUSE</strong> — younger crowd, mixed tunes</li>
-              <li><strong>Xingxing Dibao 星星地堡</strong> — air raid shelter speakeasy</li>
-              <li><strong>True Color 真彩 / Code Bar</strong> — live music bars in the same district</li>
-              <li>KTV: any <strong>Party World / Pure 麦颂</strong> branch — 24-hour</li>
+              <li><strong>Bar 62</strong> — high-floor view of Jiefangbei skyline</li>
+              <li><strong>M1NT</strong> Chongqing — stylish rooftop</li>
             </ul>
           </div>
         </article>
 
         <article class="day" aria-labelledby="d6">
-          <h3 id="d6"><span class="day-num">Day 6</span> May 19 · Tuesday · Chongqing → Xi'an <span class="zh" lang="zh-CN">5月19日 周二 重庆→西安</span></h3>
-          <span class="bi"><span class="en"><strong>8 am HSR Chongqing → Xi'an</strong> (~4.5 hr)</span><span class="zh" lang="zh-CN">早8点高铁（约4.5小时）</span></span>
-          <span class="bi"><span class="en">Lunch on arrival · check in <strong>Atour Bell Tower</strong></span><span class="zh" lang="zh-CN">到站午餐 · 入住亚朵钟楼南门店</span></span>
-          <span class="bi"><span class="en">PM: <strong>Xi'an City Wall 西安城墙</strong> walk</span><span class="zh" lang="zh-CN">下午：西安城墙步行</span></span>
-          <span class="bi"><span class="en">Evening: <strong>Muslim Quarter 回民街 + rou jia mo 肉夹馍</strong></span><span class="zh" lang="zh-CN">傍晚：回民街 + 肉夹馍</span></span>
+          <h3 id="d6"><span class="day-num">Day 6</span> May 19 · Tuesday · Chongqing full day <span class="zh" lang="zh-CN">5月19日 周二 重庆全天</span></h3>
+          <span class="bi"><span class="en">Breakfast: <strong>xiaomian 小面</strong> (use breakfast voucher or local stall)</span><span class="zh" lang="zh-CN">早餐：重庆小面（使用早餐券或街边店）</span></span>
+          <span class="bi"><span class="en"><strong>Liziba monorail 李子坝穿楼轻轨</strong></span><span class="zh" lang="zh-CN">李子坝穿楼轻轨</span></span>
+          <span class="bi"><span class="en"><strong>Yangtze River cable car 长江索道</strong></span><span class="zh" lang="zh-CN">长江索道</span></span>
+          <span class="bi"><span class="en"><strong>Chaotianmen 朝天门</strong> two-rivers confluence</span><span class="zh" lang="zh-CN">朝天门两江交汇</span></span>
+          <span class="bi"><span class="en">Midday: <strong>Chongqing Zoo</strong> — pandas (~1.5 hr, timed entry)</span><span class="zh" lang="zh-CN">中午：重庆动物园熊猫馆（约1.5小时）</span></span>
+          <span class="bi"><span class="en">Late afternoon: rest at hotel before hot pot</span><span class="zh" lang="zh-CN">下午：酒店休息备战火锅</span></span>
+          <span class="bi"><span class="en">Dinner: <strong>hot pot + 变脸 face-changing show + rabbit head starter</strong></span><span class="zh" lang="zh-CN">晚餐：火锅 + 变脸表演 + 兔头开胃</span></span>
           <div class="nightlife">
-            <p class="label">Optional · 选择性</p>
+            <p class="label">9th St clubs → KTV all night · 九街通宵</p>
             <ul>
-              <li><strong>Yongxingfang 永兴坊</strong> — food court alley with Shaanxi snacks &amp; folk shows</li>
-              <li><strong>1+1 Disco</strong> or <strong>Sutton Music Club</strong> — only if energy permits</li>
+              <li><strong>ESMi</strong> — biggest CQ club, hip-hop / EDM</li>
+              <li><strong>SPACE</strong> · <strong>PLAY HOUSE</strong> · <strong>Xingxing Dibao 星星地堡</strong></li>
+              <li><strong>True Color 真彩</strong> · <strong>Code Bar</strong> — live music</li>
+              <li>KTV: <strong>Party World / Pure 麦颂</strong> — 24-hour</li>
             </ul>
           </div>
         </article>
 
         <article class="day" aria-labelledby="d7">
-          <h3 id="d7"><span class="day-num">Day 7</span> May 20 · Wednesday · Terracotta + Huaqing <span class="zh" lang="zh-CN">5月20日 周三 兵马俑 + 华清宫</span></h3>
-          <span class="bi"><span class="en">AM: <strong>Terracotta Army 兵马俑</strong></span><span class="zh" lang="zh-CN">上午：兵马俑</span></span>
-          <span class="bi"><span class="en">PM: <strong>Huaqing Hot Springs 华清宫</strong> (Lintong)</span><span class="zh" lang="zh-CN">下午：华清宫（临潼）</span></span>
-          <span class="bi"><span class="en">Evening: <strong>Chang Hen Ge 长恨歌</strong> night show @ Huaqing</span><span class="zh" lang="zh-CN">傍晚：长恨歌夜场实景演出</span></span>
+          <h3 id="d7"><span class="day-num">Day 7</span> May 20 · Wednesday · Chongqing → Xi'an <span class="zh" lang="zh-CN">5月20日 周三 重庆→西安</span></h3>
+          <span class="bi"><span class="en">AM: Hotel breakfast, check out by 12:00</span><span class="zh" lang="zh-CN">上午：早餐 · 12:00前退房</span></span>
+          <span class="bi"><span class="en">Midday: Fly Chongqing → Xi'an (~2 hr direct, much faster than 11 hr HSR)</span><span class="zh" lang="zh-CN">中午：飞西安（直飞约2小时，远快于11小时高铁）</span></span>
+          <span class="bi"><span class="en">PM arrival: Check in <strong>Atour Bell Tower South Gate</strong></span><span class="zh" lang="zh-CN">下午抵达：入住亚朵钟楼南门店</span></span>
+          <span class="bi"><span class="en">Evening: <strong>Muslim Quarter 回民街 + rou jia mo 肉夹馍</strong></span><span class="zh" lang="zh-CN">傍晚：回民街 + 肉夹馍</span></span>
           <div class="nightlife">
-            <p class="label">After-show · 演出后</p>
+            <p class="label">Optional · 选择性</p>
             <ul>
-              <li>Late return to Xi'an — rest night, light supper near hotel <span class="zh" lang="zh-CN">回西安较晚，酒店附近简餐休息</span></li>
+              <li><strong>Yongxingfang 永兴坊</strong> food alley + folk shows</li>
             </ul>
           </div>
         </article>
 
         <article class="day" aria-labelledby="d8">
-          <h3 id="d8"><span class="day-num">Day 8</span> May 21 · Thursday · Xi'an → Beijing <span class="zh" lang="zh-CN">5月21日 周四 西安→北京</span></h3>
-          <span class="bi"><span class="en">AM: <strong>Calligraphy + seal carving</strong> studio class (~2 hr)</span><span class="zh" lang="zh-CN">上午：书法 + 篆刻课程（约2小时）</span></span>
-          <span class="bi"><span class="en">Late AM: <strong>Shaanxi History Museum 陕西历史博物馆</strong></span><span class="zh" lang="zh-CN">中午前：陕西历史博物馆</span></span>
-          <span class="bi"><span class="en">PM HSR Xi'an → Beijing (~4.5 hr) · check in <strong>Atour Wangfujing</strong></span><span class="zh" lang="zh-CN">下午高铁北京 · 入住亚朵王府井店</span></span>
-          <span class="bi"><span class="en">Evening: <strong>Ghost Street 簋街</strong> dinner</span><span class="zh" lang="zh-CN">傍晚：簋街晚餐</span></span>
+          <h3 id="d8"><span class="day-num">Day 8</span> May 21 · Thursday · Terracotta + Huaqing <span class="zh" lang="zh-CN">5月21日 周四 兵马俑 + 华清宫</span></h3>
+          <span class="bi"><span class="en">AM: <strong>Terracotta Army 兵马俑</strong></span><span class="zh" lang="zh-CN">上午：兵马俑</span></span>
+          <span class="bi"><span class="en">PM: <strong>Huaqing Hot Springs 华清宫</strong> (Lintong, same direction)</span><span class="zh" lang="zh-CN">下午：华清宫（临潼）</span></span>
+          <span class="bi"><span class="en">Evening: <strong>Chang Hen Ge 长恨歌</strong> night show @ Huaqing</span><span class="zh" lang="zh-CN">傍晚：长恨歌夜场实景演出</span></span>
           <div class="nightlife">
-            <p class="label">Baiju + speakeasy · 白酒 + 小酒馆</p>
+            <p class="label">After-show · 演出后</p>
             <ul>
-              <li><strong>Capital Spirits 首都酒坊</strong> — baiju tasting flights, Wudaoying Hutong 五道营胡同</li>
-              <li><strong>Janes + Hooch</strong> — prohibition-style speakeasy, Sanlitun</li>
-              <li><strong>Mai Bar</strong> — hidden hutong cocktail bar</li>
+              <li>Late return to Xi'an — light supper near hotel, rest <span class="zh" lang="zh-CN">回西安较晚，酒店附近简餐休息</span></li>
             </ul>
           </div>
         </article>
 
         <article class="day" aria-labelledby="d9">
-          <h3 id="d9"><span class="day-num">Day 9</span> May 22 · Friday · Beijing <span class="zh" lang="zh-CN">5月22日 周五 北京</span></h3>
-          <span class="bi"><span class="en">AM: <strong>Forbidden City 故宫</strong> (advance reservation required)</span><span class="zh" lang="zh-CN">上午：故宫（须预约）</span></span>
-          <span class="bi"><span class="en">PM: <strong>Dumpling making class</strong> in hutong studio (~2 hr)</span><span class="zh" lang="zh-CN">下午：胡同包饺子（约2小时）</span></span>
-          <span class="bi"><span class="en">Pre-dinner: <strong>Sanlitun 三里屯</strong> stroll</span><span class="zh" lang="zh-CN">傍晚前：三里屯闲逛</span></span>
-          <span class="bi"><span class="en">Dinner: <strong>Xiao Dadong 小大董</strong> (Peking duck)</span><span class="zh" lang="zh-CN">晚餐：小大董（烤鸭）</span></span>
-          <span class="bi"><span class="en">🥋 7:30 pm: <strong>Red Theatre 红剧场 · Legend of Kung Fu 功夫传奇</strong></span><span class="zh" lang="zh-CN">晚7:30：红剧场《功夫传奇》</span></span>
+          <h3 id="d9"><span class="day-num">Day 9</span> May 22 · Friday · Xi'an → Beijing <span class="zh" lang="zh-CN">5月22日 周五 西安→北京</span></h3>
+          <span class="bi"><span class="en">AM: Leisurely breakfast, optional <strong>Xi'an City Wall 西安城墙</strong> short walk</span><span class="zh" lang="zh-CN">上午：从容早餐 · 可选短走西安城墙</span></span>
+          <span class="bi"><span class="en">Midday: HSR Xi'an → Beijing (~4.5 hr)</span><span class="zh" lang="zh-CN">中午：高铁北京（约4.5小时）</span></span>
+          <span class="bi"><span class="en">Late PM arrival: Check in <strong>Atour Wangfujing</strong></span><span class="zh" lang="zh-CN">傍晚抵达：入住亚朵王府井店</span></span>
+          <span class="bi"><span class="en">Dinner: <strong>Ghost Street 簋街</strong> spicy crayfish 麻辣小龙虾</span><span class="zh" lang="zh-CN">晚餐：簋街麻辣小龙虾</span></span>
           <div class="nightlife">
-            <p class="label">Sanlitun clubs · 三里屯夜店</p>
+            <p class="label">Baiju + speakeasy · 白酒 + 小酒馆</p>
             <ul>
-              <li><strong>Destination</strong> — LGBTQ+ flagship, big dance floor</li>
-              <li><strong>Lantern</strong> — techno / underground</li>
-              <li><strong>Migas Mercado</strong> — rooftop, smart casual</li>
-              <li><strong>Atmosphere</strong> @ Park Hyatt — top-floor cocktail bar with city view</li>
+              <li><strong>Capital Spirits 首都酒坊</strong> — baiju tasting flights, Wudaoying Hutong 五道营胡同</li>
+              <li><strong>Janes + Hooch</strong> — Sanlitun speakeasy</li>
+              <li><strong>Sanlitun 三里屯</strong> stroll if energy permits</li>
             </ul>
           </div>
         </article>
 
         <article class="day" aria-labelledby="d10">
-          <h3 id="d10"><span class="day-num">Day 10</span> May 23 · Saturday · Great Wall <span class="zh" lang="zh-CN">5月23日 周六 长城</span></h3>
-          <span class="bi"><span class="en"><strong>Mutianyu Great Wall 慕田峪长城</strong> (transport pre-booked)</span><span class="zh" lang="zh-CN">慕田峪长城（接送已预订）</span></span>
-          <span class="bi"><span class="en">Return Beijing · dinner</span><span class="zh" lang="zh-CN">返京 · 晚餐</span></span>
+          <h3 id="d10"><span class="day-num">Day 10</span> May 23 · Saturday · Great Wall day <span class="zh" lang="zh-CN">5月23日 周六 长城</span></h3>
+          <span class="bi"><span class="en">Early AM: Pickup for <strong>Mutianyu Great Wall 慕田峪长城</strong> (~90 min ride)</span><span class="zh" lang="zh-CN">清晨：慕田峪长城接送（约90分钟车程）</span></span>
+          <span class="bi"><span class="en">Full day at Mutianyu: cable car up, toboggan down, ~3–4 hr on wall</span><span class="zh" lang="zh-CN">长城一整天：缆车上 · 滑道下 · 城墙3–4小时</span></span>
+          <span class="bi"><span class="en">Return Beijing late afternoon</span><span class="zh" lang="zh-CN">傍晚返京</span></span>
+          <span class="bi"><span class="en">Dinner: <strong>Xiao Dadong 小大董</strong> (Peking duck)</span><span class="zh" lang="zh-CN">晚餐：小大董（烤鸭）</span></span>
+          <span class="bi"><span class="en">Early night — packing &amp; sleep for early departure</span><span class="zh" lang="zh-CN">早睡 · 整理行李</span></span>
           <div class="nightlife">
             <p class="label">Quiet wind-down · 静养</p>
             <ul>
-              <li>Hotel bar or hutong tea — early night before final-day cupping <span class="zh" lang="zh-CN">酒店或胡同茶馆，早睡为明日拔罐做准备</span></li>
+              <li>Hotel bar or hutong tea — no late club (early flight tomorrow) <span class="zh" lang="zh-CN">酒店或胡同茶馆 · 明早航班，不熬夜</span></li>
             </ul>
           </div>
         </article>
 
         <article class="day" aria-labelledby="d11">
-          <h3 id="d11"><span class="day-num">Day 11</span> May 24 · Sunday · Departure <span class="zh" lang="zh-CN">5月24日 周日 离境</span></h3>
-          <span class="bi"><span class="en">AM: <strong>Cupping massage 拔罐推拿</strong> before flight</span><span class="zh" lang="zh-CN">上午：拔罐推拿（飞前理疗）</span></span>
-          <span class="bi"><span class="en">Check out · fly home</span><span class="zh" lang="zh-CN">退房 · 离境</span></span>
+          <h3 id="d11"><span class="day-num">Day 11</span> May 24 · Sunday · Depart Beijing → Seoul → Seattle <span class="zh" lang="zh-CN">5月24日 周日 经首尔回西雅图</span></h3>
+          <span class="bi"><span class="en">~07:30: Leave hotel, taxi/Didi to Beijing Daxing (PKX) ~60–80 min</span><span class="zh" lang="zh-CN">早上7:30：出发去大兴机场（约60–80分钟）</span></span>
+          <span class="bi"><span class="en">11:45: MU2073 PKX → ICN Seoul Incheon</span><span class="zh" lang="zh-CN">11:45：东方MU2073 飞首尔</span></span>
+          <span class="bi"><span class="en">14:50–19:00: 4h 10m transfer at ICN</span><span class="zh" lang="zh-CN">14:50–19:00：仁川转机 4小时10分</span></span>
+          <span class="bi"><span class="en">19:00: DL0196 ICN → SEA, arrives 13:11 same day</span><span class="zh" lang="zh-CN">19:00：达美DL0196 飞西雅图 · 当日13:11抵达</span></span>
         </article>
       </section>
 
@@ -648,29 +768,15 @@
         <div class="venue-grid">
           <div class="venue-cat">
             <h4>Clubs · 夜店</h4>
-            <ul>
-              <li>Arkham (techno)</li>
-              <li>Elevator (underground)</li>
-              <li>Dada (indie / dive)</li>
-              <li>TAXX / Found 158 (high-energy)</li>
-            </ul>
+            <ul><li>Arkham (techno)</li><li>Elevator (underground)</li><li>Dada (indie / dive)</li><li>TAXX / Found 158 (high-energy)</li></ul>
           </div>
           <div class="venue-cat">
             <h4>Bars · 酒吧</h4>
-            <ul>
-              <li>Speak Low (speakeasy)</li>
-              <li>Flask (hidden door)</li>
-              <li>JZ Club (live jazz)</li>
-              <li>Niang Qin 娘亲 (TCM cocktails)</li>
-            </ul>
+            <ul><li>Speak Low (speakeasy)</li><li>Flask (hidden door)</li><li>JZ Club (live jazz)</li><li>Niang Qin 娘亲 (TCM cocktails)</li></ul>
           </div>
           <div class="venue-cat">
             <h4>Rooftops · 天台</h4>
-            <ul>
-              <li>Char Bar (Bund view)</li>
-              <li>Flair (Ritz Pudong)</li>
-              <li>Captain Bar (old-school Bund)</li>
-            </ul>
+            <ul><li>Char Bar (Bund view)</li><li>Flair (Ritz Pudong)</li><li>Captain Bar (old-school Bund)</li></ul>
           </div>
         </div>
 
@@ -678,27 +784,15 @@
         <div class="venue-grid">
           <div class="venue-cat">
             <h4>Clubs · 夜店</h4>
-            <ul>
-              <li>ESMi</li>
-              <li>SPACE</li>
-              <li>PLAY HOUSE</li>
-              <li>Xingxing Dibao 星星地堡</li>
-            </ul>
+            <ul><li>ESMi</li><li>SPACE</li><li>PLAY HOUSE</li><li>Xingxing Dibao 星星地堡</li></ul>
           </div>
           <div class="venue-cat">
             <h4>Bars · 酒吧</h4>
-            <ul>
-              <li>Air raid shelter bars 防空洞酒吧</li>
-              <li>True Color 真彩</li>
-              <li>Code Bar</li>
-            </ul>
+            <ul><li>Air raid shelter bars 防空洞酒吧</li><li>True Color 真彩</li><li>Code Bar</li></ul>
           </div>
           <div class="venue-cat">
             <h4>Rooftops · 天台</h4>
-            <ul>
-              <li>Bar 62</li>
-              <li>M1NT Chongqing</li>
-            </ul>
+            <ul><li>Bar 62</li><li>M1NT Chongqing</li></ul>
           </div>
         </div>
 
@@ -706,19 +800,11 @@
         <div class="venue-grid">
           <div class="venue-cat">
             <h4>Cultural · 文化</h4>
-            <ul>
-              <li>Chang Hen Ge 长恨歌 (Huaqing night show)</li>
-              <li>Yongxingfang 永兴坊 (food alley + folk shows)</li>
-              <li>Tang Dynasty Show 唐乐宫</li>
-            </ul>
+            <ul><li>Chang Hen Ge 长恨歌 (Huaqing night show)</li><li>Yongxingfang 永兴坊</li><li>Tang Dynasty Show 唐乐宫</li></ul>
           </div>
           <div class="venue-cat">
             <h4>Bars / clubs · 酒吧夜店</h4>
-            <ul>
-              <li>1+1 Disco</li>
-              <li>Sutton Music Club</li>
-              <li>Muslim Quarter night stalls 回民街夜市</li>
-            </ul>
+            <ul><li>1+1 Disco</li><li>Sutton Music Club</li><li>Muslim Quarter night stalls</li></ul>
           </div>
         </div>
 
@@ -726,26 +812,15 @@
         <div class="venue-grid">
           <div class="venue-cat">
             <h4>Clubs · 夜店</h4>
-            <ul>
-              <li>Destination (LGBTQ+ flagship)</li>
-              <li>Lantern (techno)</li>
-              <li>Migas Mercado</li>
-            </ul>
+            <ul><li>Destination (LGBTQ+ flagship)</li><li>Lantern (techno)</li><li>Migas Mercado</li></ul>
           </div>
           <div class="venue-cat">
             <h4>Bars · 酒吧</h4>
-            <ul>
-              <li>Capital Spirits 首都酒坊 (baiju)</li>
-              <li>Janes + Hooch (speakeasy)</li>
-              <li>Mai Bar (hutong cocktails)</li>
-            </ul>
+            <ul><li>Capital Spirits 首都酒坊 (baiju)</li><li>Janes + Hooch (speakeasy)</li><li>Mai Bar (hutong cocktails)</li></ul>
           </div>
           <div class="venue-cat">
             <h4>Rooftops · 天台</h4>
-            <ul>
-              <li>Atmosphere @ Park Hyatt</li>
-              <li>Migas Mercado rooftop</li>
-            </ul>
+            <ul><li>Atmosphere @ Park Hyatt</li><li>Migas Mercado rooftop</li></ul>
           </div>
         </div>
       </section>
@@ -764,41 +839,44 @@
               </tr>
             </thead>
             <tbody>
-              <tr><td>Origin → Shanghai 上海</td><td>Flight · 航班</td><td>May 14</td><td>International arrival</td></tr>
-              <tr><td>Shanghai → Chongqing 重庆</td><td>Flight · 航班</td><td>May 17 AM</td><td>~3 hr</td></tr>
-              <tr><td>Chongqing → Xi'an 西安</td><td>HSR · 高铁</td><td>May 19, 8 am</td><td>~4.5 hr · pre-select seats</td></tr>
-              <tr><td>Xi'an → Beijing 北京</td><td>HSR · 高铁</td><td>May 21 PM</td><td>~4.5 hr</td></tr>
-              <tr><td>Beijing → Origin</td><td>Flight · 航班</td><td>May 24</td><td>International departure</td></tr>
+              <tr><td>Seattle → Shanghai 上海</td><td>DL0281</td><td>May 14 16:05 → May 15 19:50</td><td>12h 45m, A350-900</td></tr>
+              <tr><td>Shanghai → Chongqing 重庆</td><td>Flight · 航班</td><td>May 18 midday</td><td>~3 hr · book SHA/PVG → CKG</td></tr>
+              <tr><td>Chongqing → Xi'an 西安</td><td>Flight · 航班</td><td>May 20 afternoon</td><td>~2 hr · much faster than 11 hr HSR</td></tr>
+              <tr><td>Xi'an → Beijing 北京</td><td>HSR · 高铁</td><td>May 22 midday</td><td>~4.5 hr</td></tr>
+              <tr><td>Beijing → Seoul</td><td>MU2073</td><td>May 24 11:45 → 14:50</td><td>~3 hr, A321 · from PKX</td></tr>
+              <tr><td>Seoul → Seattle</td><td>DL0196</td><td>May 24 19:00 → 13:11</td><td>A350-900 · same calendar day arrival</td></tr>
             </tbody>
           </table>
         </div>
         <div class="callout-warn" role="note">
-          <strong>240-hour transit visa · 240小时免签:</strong>
-          Confirm full trip stays inside the window if relying on transit-without-visa entry.
-          <span class="zh" lang="zh-CN">若使用240小时过境免签，请确认全程在窗口内。</span>
+          <strong>Visa note · 签证提示:</strong>
+          Trip is ~10 nights. If using a US passport with 240-hour transit-without-visa, confirm full trip stays inside the window AND that both PVG entry and PKX exit qualify under the same TWOV allowance.
+          <span class="zh" lang="zh-CN">如使用240小时过境免签，请确认全程在窗口内并确认浦东入境与大兴出境是否符合同一TWOV配额。</span>
         </div>
       </section>
 
       <section class="card" id="backups" aria-labelledby="backups-h">
         <h2 id="backups-h">Anthologia backups <span class="zh" lang="zh-CN">备选餐厅</span></h2>
-        <p>If Anthologia is full for May 14, switch in this order in the same call: <span class="zh" lang="zh-CN">若 Anthologia 满，按顺序切换：</span></p>
+        <p>If Anthologia is full for May 17, switch in this order in the same call: <span class="zh" lang="zh-CN">若 Anthologia 5月17日无位，按顺序切换：</span></p>
         <ol>
-          <li><strong>Fu He Hui 福和慧</strong> — Michelin 2-star vegetarian <span class="zh" lang="zh-CN">米其林二星素食</span></li>
-          <li><strong>Ling Long 玲珑</strong> — modern Chinese tasting <span class="zh" lang="zh-CN">现代中餐</span></li>
-          <li><strong>Yong Yi Ting 雍颐庭</strong> — Mandarin Oriental, Jiangnan <span class="zh" lang="zh-CN">文华东方酒店，江南菜</span></li>
-          <li><strong>Bird 柏鸟</strong> — newer fine-dining, easier walk-in <span class="zh" lang="zh-CN">新锐高端</span></li>
+          <li><strong>Fu He Hui 福和慧</strong> — Michelin 2-star vegetarian</li>
+          <li><strong>Ling Long 玲珑</strong> — modern Chinese tasting</li>
+          <li><strong>Yong Yi Ting 雍颐庭</strong> — Mandarin Oriental Jiangnan</li>
+          <li><strong>Bird 柏鸟</strong> — newer fine-dining</li>
         </ol>
       </section>
 
       <section class="card" id="pending" aria-labelledby="pending-h">
         <h2 id="pending-h">Pending / open items <span class="zh" lang="zh-CN">待定事项</span></h2>
         <ul>
-          <li>Confirm Anthologia May 14 booking <span class="zh" lang="zh-CN">立即联系 Anthologia</span></li>
-          <li>Book all four Atour hotels via app <span class="zh" lang="zh-CN">亚朵App统一预订4城</span></li>
-          <li>Confirm Shanghai Port ticket purchase (Damai 大麦 / club app)</li>
-          <li>Confirm exact Shanghai Port kickoff time before locking May 15 dinner</li>
-          <li>Confirm Gong Yan / Xu Yan Shanghai branch reservation</li>
-          <li>Confirm photographer May 15 (Xiaohongshu 小红书)</li>
+          <li>Book <strong>Shanghai · Xi'an · Beijing</strong> hotels (3 Atour properties) <span class="zh" lang="zh-CN">预订上海、西安、北京三家亚朵</span></li>
+          <li>Book three domestic flights: SHA → CKG (May 18), CKG → XIY (May 20)</li>
+          <li>Book HSR Xi'an → Beijing (May 22 midday)</li>
+          <li>Confirm Anthologia May 17 reservation</li>
+          <li>Confirm Wanda Diamond League May 16 tickets</li>
+          <li>Confirm teamLab Borderless May 17 timed entry</li>
+          <li>Confirm Mutianyu transport May 23 (~6 AM pickup if doing full day)</li>
+          <li>Confirm Terracotta + Huaqing + Chang Hen Ge package May 21</li>
         </ul>
       </section>
 
